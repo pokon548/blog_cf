@@ -1,0 +1,1 @@
+Global blog plan!
