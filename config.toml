@@ -1,0 +1,87 @@
+baseurl = "/"
+languageCode = "zh-cn"
+defaultContentLanguage = "zh"
+theme = "terminal"
+paginate = 5
+
+[params]
+  # dir name of your main content (default is `content/posts`).
+  # the list of set content will show up on your index page (baseurl).
+  contentTypeName = "posts"
+
+  # ["orange", "blue", "red", "green", "pink"]
+  themeColor = "blue"
+
+  # if you set this to 0, only submenu trigger will be visible
+  showMenuItems = 2
+
+  # show selector to switch language
+  showLanguageSelector = false
+
+  # set theme to full screen width
+  fullWidthTheme = false
+
+  # center theme with default width
+  centerTheme = false
+
+  # if your resource directory contains an image called `cover.(jpg|png|webp)`,
+  # then the file will be used as a cover automatically.
+  # With this option you don't have to put the `cover` param in a front-matter.
+  autoCover = true
+
+  # set post to show the last updated
+  # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
+  #showLastUpdated = true
+
+  # set a custom favicon (default is a `themeColor` square)
+  # favicon = "favicon.ico"
+
+  # Provide a string as a prefix for the last update date. By default, it looks like this: 2020-xx-xx [Updated: 2020-xx-xx] :: Author
+  # updatedDatePrefix = "Updated"
+
+  # set all headings to their default size (depending on browser settings)
+  # oneHeadingSize = true # default
+
+  # whether to show a page's estimated reading time
+  #readingTime = true
+
+  # whether to show a table of contents
+  # can be overridden in a page's front-matter
+  Toc = true
+
+  # set title for the table of contents
+  # can be overridden in a page's front-matter
+  TocTitle = "目录" # default
+
+[permalinks]
+  posts = '/:year/:month/:day/:title/'
+
+[languages]
+  [languages.zh]
+    languageName = "中文"
+    title = "pokon548 的部落阁"
+    subtitle = "简单，随和的赛博自留地"
+    owner = "pokon548"
+    keywords = ""
+    copyright = "pokon548 © 2022"
+    menuMore = "更多"
+    readMore = "继续阅读"
+    readOtherPosts = "阅读其他文章"
+    newerPosts = "Newer posts"
+    olderPosts = "Older posts"
+    missingContentMessage = "找不到文章..."
+    missingBackButtonLabel = "回到首页"
+
+    [languages.zh.params.logo]
+      logoText = "pokon548@blog"
+      logoHomeLink = "/"
+
+    [languages.zh.menu]
+      [[languages.zh.menu.main]]
+        identifier = "about"
+        name = "关于"
+        url = "/about"
+      [[languages.zh.menu.main]]
+        identifier = "showcase"
+        name = "精选辑"
+        url = "/showcase"
