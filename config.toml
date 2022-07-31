@@ -61,6 +61,14 @@ paginate = 5
   filename = 'sitemap.xml'
   priority = 0.5
 
+[module]
+
+[[module.imports]]
+path = "github.com/davidsneighbour/hugo-robots"
+disable = false
+ignoreConfig = false
+ignoreImports = false
+
 [languages]
   [languages.zh]
     languageName = "中文"
