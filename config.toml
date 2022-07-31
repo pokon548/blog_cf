@@ -13,7 +13,7 @@ paginate = 5
   themeColor = "blue"
 
   # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 2
+  showMenuItems = 5
 
   # show selector to switch language
   showLanguageSelector = false
@@ -68,7 +68,7 @@ paginate = 5
     subtitle = "简单，随和的赛博自留地"
     owner = "pokon548"
     keywords = ""
-    copyright = "pokon548 © 2022"
+    copyright = "Copyright © 2016-2022 | pokon548"
     menuMore = "更多"
     readMore = "继续阅读"
     readOtherPosts = "阅读其他文章"
@@ -83,10 +83,17 @@ paginate = 5
 
     [languages.zh.menu]
       [[languages.zh.menu.main]]
+        identifier = "posts"
+        name = "文章"
+        url = "/"
+        weight = 1
+      [[languages.zh.menu.main]]
+        identifier = "project"
+        name = "项目"
+        url = "/project"
+        weight = 2
+      [[languages.zh.menu.main]]
         identifier = "about"
         name = "关于"
         url = "/about"
-      [[languages.zh.menu.main]]
-        identifier = "showcase"
-        name = "精选辑"
-        url = "/showcase"
+        weight = 3
