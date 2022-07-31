@@ -93,7 +93,12 @@ paginate = 5
         url = "/project"
         weight = 2
       [[languages.zh.menu.main]]
+        identifier = "hobby"
+        name = "爱好"
+        url = "/hobby"
+        weight = 3
+      [[languages.zh.menu.main]]
         identifier = "about"
         name = "关于"
         url = "/about"
-        weight = 3
+        weight = 4
