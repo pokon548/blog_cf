@@ -45,7 +45,7 @@ LIVE A LIVE 发售当周，即瞬间冲到 [Amazon 购买榜首](https://www.fam
 至于你说购买数量不代表最终品质？那么，在不剧透的基础上，我会给出这些购买的理由：
 
 ### 有 demo
-担心不好玩？没关系，你现在就可以通过去 Nintendo eshop 下载 LIVE A LIVE 的体验版。
+担心不好玩？没关系，你现在就可以去 Nintendo eshop 下载 LIVE A LIVE 的体验版。
 
 体验版可以玩到三个角色，每个角色可以玩到大约一半的剧情。好不好玩，上手就知道了。
 
