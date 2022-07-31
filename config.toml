@@ -64,7 +64,7 @@ paginate = 5
 [module]
 
 [[module.imports]]
-path = "github.com/davidsneighbour/hugo-robots"
+path = "github.com/davidsneighbour/github.com/davidsneighbour/hugo-pwa"
 disable = false
 ignoreConfig = false
 ignoreImports = false
@@ -110,3 +110,6 @@ ignoreImports = false
         name = "关于"
         url = "/about"
         weight = 4
+
+[outputs]
+home = ["manifest"]
