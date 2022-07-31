@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  
+    <title>Posts :: pokon548 的部落阁</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="/assets/blue.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="/img/favicon/blue.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="zh" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Posts">
+<meta property="og:description" content="" />
+<meta property="og:url" content="/posts/" />
+<meta property="og:site_name" content="pokon548 的部落阁" />
+
+  
+    <meta property="og:image" content="/img/favicon/blue.png">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+
+
+
+  <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="pokon548 的部落阁" />
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    pokon548@blog
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">关于</a></li>
+        
+      
+        
+          <li><a href="/showcase">精选辑</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">关于</a></li>
+      
+    
+      
+        <li><a href="/showcase">精选辑</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+  
+  <div class="posts">
+    
+      <div class="post on-list">
+        <h1 class="post-title">
+          <a href="/2019/08/08/%E7%94%A8-arcade-%E5%AD%A6%E4%B9%A0%E5%86%99%E4%B8%80%E6%AC%BE-rpg-%E6%B8%B8%E6%88%8F-%E8%AE%A9%E4%B8%BB%E8%A7%92%E5%8A%A8%E8%B5%B7%E6%9D%A5/">用 Arcade 学习写一款 RPG 游戏 —— 让主角动起来</a>
+        </h1>
+        <div class="post-meta">
+          <span class="post-date">
+            2019-08-08
+          </span>
+          
+        </div>
+
+        
+
+        
+
+
+      
+        <div class="post-content">
+          
+            前一篇文章已经提到了如何使用 Arcade 这一十分方便的在线游戏编程学习平台。那么这次我们就来正式开始写游戏吧！
+进入 Arcade 并创建游戏项目 首先，请戳这里进入 Arcade 平台。在页面加载完毕后，找到“我的项目”，并点击大大的紫色按钮“新建项目”。 新建项目可能需要一点时间，请耐心等待进度条停止显示。 当界面变成下图模样时，即代表项目已经创建完成。可以开始了！ 游戏主人公 —— 精灵 在 Arcade 中，游戏主人公以及其它各种各样的 RPG 都有一个统称，叫做“精灵”（不要问我为什么叫这个）。 通过创建精灵，你可以为游戏添加主人公、NPC、怪兽、云（对，就是每天在我们天上飘的那个）、子弹（对，你没有看错，它真的可以干这个）等等… 可以说，这个是游戏里面相当重要的一环了。
+创建精灵 那么，该怎么创建一个精灵呢？很简单。点击左侧的“精灵”分区，把这个方块拖出来即可。 给精灵皮肤 你一定不会想要你的主角在屏幕上是透明的存在吧（当然如果你要五毛钱特效当我没说）？为了让主人公富有活力，同时让玩家有玩这款游戏的欲望，我们需要给精灵一层皮肤。 当然了，手动绘制一个精灵的皮肤不是我们这篇博文的重点。故我们就使用 Arcade 自带的主角皮肤就好（相信我，其实自带的皮肤还挺帅的）。
+要给精灵加上皮肤，请找到你刚刚拖出来的方块，点击这个灰色的地方。 接下来，你应该会看到这样的一个弹出框。这个就是皮肤的编辑框了。 然后，我们切换到“Gallery”分栏里，选择 Arcade 自带的主角皮肤。选择完后，点击“完成”。 这样，我们的主角就有皮肤了。
+Arcade 目前只支持 16 位色的显示！ 如果你是一个特别喜欢各种颜色搭配的 Geek，那么 Arcade 也许会让你小小的失望一番 —— 其（不包括透明色）只支持 16 种颜色的显示。 这也是为什么皮肤编辑器里没有“RGB调色板“一类东西的原因。不过相信我，16 位色在学习游戏开发的过程中完全够用，因此不需要太过于担心。
+让主人公动起来 你也许注意到了一点：我们现在拖出来的那个方块“失去了颜色”。这是不是在提醒着我们什么？如果你敏锐的感受到了这一点，那么 pokon548 向你表示小小的祝贺！的确！这提醒我们：这个方块目前不会产生实际的效果。 什么意思呢？让我们先点击左侧的“播放按钮”看看目前这个项目运行的结果。 你会发现：左侧模拟器的“屏幕”上最终什么都没有。没有显示出我们刚刚创建出来的主角。怎么回事呢？
+一般游戏的运行逻辑 这就要谈到目前常见游戏的运转逻辑了。在现代的常见游戏中，无论是选关、得到道具、NPC 的交流、主人公的行走等，都是在一个循环里面进行的。 而要让这一切发生，我们首先要进行“初始化”操作。如果你不明白这个词的含义，举个例子：要让主角在后面的循环中动起来，我们必须要先有一个主角才行（不然主角是幽灵吗滑稽）。不然后面的循环里我们要操作什么呢？
+进行“初始化”操作 回到项目上。我们刚刚创建“主人公”这一动作其实就是“初始化”操作的一部分。而为了让这个方块发挥其初始化主角的作用，我们要把这个方块拖动到绿色的“当开机时”的方块内。 下面是操作方法的动态示意图： 你看，方块是不是恢复到正常颜色了？我们现在再试试点击”播放“按钮，看看项目的运行情况。 我们的主角出现了哦！真棒！
+让主人公能够运动起来 也许你之前曾试过点击左侧模拟器的方向键。如果没有的话，pokon548 推荐你现在就点点看。 没有任何效果？那就对了。因为我们还没做好这个功能呢！唔…接下来我们要做的，就是让主角能够在我们按下方向键的时候动起来！ 听起来似乎很复杂的样子。但是在 Arcade 里面，我们只需要另外一个方块就可以搞定啦！
+          
+        </div>
+
+        
+        <div>
+          <a class="read-more button"
+            href="/2019/08/08/%E7%94%A8-arcade-%E5%AD%A6%E4%B9%A0%E5%86%99%E4%B8%80%E6%AC%BE-rpg-%E6%B8%B8%E6%88%8F-%E8%AE%A9%E4%B8%BB%E8%A7%92%E5%8A%A8%E8%B5%B7%E6%9D%A5/">继续阅读 →</a>
+        </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title">
+          <a href="/2019/08/08/%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%85%A8%E7%90%83%E4%B8%8A%E7%BD%91/">免费搭建一个属于自己的在线全球上网</a>
+        </h1>
+        <div class="post-meta">
+          <span class="post-date">
+            2019-08-08
+          </span>
+          
+        </div>
+
+        
+
+        
+
+
+      
+        <div class="post-content">
+          
+            丑话先说在前：搭建 Proxy 这件事本身存在着争议性。如果您所在的地区对于在线全球上网抓的很严，请不要这么做。否则被请去喝茶的话，pokon548 不负任何责任 :)
+网络环境越来越紧张。现在很多的代理都不能用了，存活下来的，不少都存在着时断时好的情况。为了流量去中心化，可以考虑自己搭建一个在线 Porxy，以减小 Proxy 被查到的可能性。 好了，废话不多说。下面进入正题。
+申请 Heroku 账号 因为在线全球上网是一个项目，所以我们需要一个主机才能运行它。但是不用担心，有一家国外的主机商 Heroku 有免费空间方案。那么我们就用这家吧！ 首先要做的第一件事，就是去申请一个 Heroku 账号。这个站点位于国外，有免费的空间托管方案。对于我们这种小型在线全球上网来说很适合。 不过这个站点所用的机器人验证器 reCaptcha 被 X 掉了，所以在国内没办法正常注册。怎么办？pokon548 自己目前就有一个在线全球上网节点，你只需要通过这个在线节点注册账号就好。戳我 如果一切正常，如上图所示，你应该可以看到验证码的身影。那么，该怎么填注册信息就怎么填吧！ 填完记得要点验证码进行验证，不然是不能通过注册步骤的！
+登录 Heroku 账号 注册完毕之后，你就可以用刚申请的账号密码登录到 Heroku 了。 注意！由于在线 Proxy 本身的问题，在登陆完毕后会因为 URL 异常导致后续流量不再经过 Proxy 而可能使得页面无法继续加载。如果你遇到这种情况，你可以试试不使用 Proxy 打开这一页。如果行不通，建议你开启科学上网模式后继续尝试登录。至于有什么科学上网的方法…自己找吧 :)
+导入项目 下一步，就是从 GitHub 上把在线全球上网的项目导入到 Heroku 里了。请点击这里，找到位于下面的“Deploy to Heroku”按钮。点击进行导入。 同样的，该步骤不能使用在线全球上网进行操作。 其中，App name 填入你想要给在线全球上网项目的命名。建议不要是一个较为敏感，但却好记的文本（因为后续站点的访问会用到这一文本）。 Choose a region 个人建议点一下选择框后下拉选择 Europe（看你自己所在地的情况），因为选这个节点能够保证在晚上也有较好的速度（个人测试）。 当一切填写完毕后，点击下面的“Deploy app”开始导入应用。
+导入需要时间，请耐心等待… 当导入完成后，你应该可以再页面底部看到“Your app was successfully deployed”的字样。这也就意味着你完成了搭建工作。可以开始使用了。 点击下面的 View，就可以看到你的搭建成果了！
+          
+        </div>
+
+        
+        <div>
+          <a class="read-more button"
+            href="/2019/08/08/%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%85%A8%E7%90%83%E4%B8%8A%E7%BD%91/">继续阅读 →</a>
+        </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title">
+          <a href="/2019/08/08/django-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Django 学习笔记</a>
+        </h1>
+        <div class="post-meta">
+          <span class="post-date">
+            2019-08-08
+          </span>
+          
+        </div>
+
+        
+
+        
+
+
+      
+        <div class="post-content">
+          
+            看文档，一定要找对应版本的 Django 是一个相当活跃的开发项目，即使是同一个大版本下的 Django 都可能没办法向下兼容。
+项目里的 urls.py 并不和 manage.py 在同一文件夹下 而是在文件夹里面的。 举个例子：假如说我的站点项目名是“mysite”，那么 urls.py 就应该在：mysite/mysite/ 下。
+官方文档写得很好！ 新手教程媲美实体书籍。学习 Django 跟着 Django documentation 走就好了！ 顺带一提，提供 epub 版书籍超级良心！用 calibre 转成 azw3 后放在 Kindle 里随身学！
+遇到莫名其妙问题时的解决方法 用 pip 把 Django 更新到最新版本。 确保 Python 版本在 3.5 以上（点名 Debian 系）。 如果是以前版本的 Django 创建的项目，在没有多大价值的情况下直接删了重建或者在新空模板的基础上移植一遍。 Django 不应该因为 GIL 而被否定 事实上，Django 本身从来就不专注于服务器本身。它只是一个专业的 Web 框架。要用于生产环境的话需要用一些专业的服务器软件，如 Gunicorn 搭配 gevent 协程框架来实现生产环境下的高并发请求场景。
+Django 后台菜的一笔？ 你可能需要 Jet Admin —— 最近看到的一个漂亮且使用的不像话的后台。而且，它是开源的。
+          
+        </div>
+
+        
+        <div>
+          <a class="read-more button"
+            href="/2019/08/08/django-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">继续阅读 →</a>
+        </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title">
+          <a href="/2019/08/07/%E6%9B%B4%E6%8D%A2%E5%88%B0%E6%96%B0%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%9E%B6%E6%9E%84-hexo/">更换到新的博客架构 Hexo</a>
+        </h1>
+        <div class="post-meta">
+          <span class="post-date">
+            2019-08-07
+          </span>
+          
+        </div>
+
+        
+
+        
+
+
+      
+        <div class="post-content">
+          
+            继 2018 年我用了相当长一段时间的 Typecho 后，我又又又更换了博客的架构。 这次采用的是 Hexo 这个静态博客。相对于动态博客来说，效率更高，成本更低（其实只是不想续服务器而已）。这个博客部署在 Github page 上。
+那些年，我换过的博客架构 2017 年：用 html 自己写了一个简陋到不能在简陋的博客架构。 2018 年：购买了自己的服务器，开始使用 WordPress。 2019 年：更换为 Typecho。 现在：更换为 Hexo。 正在迁移文章 ing… 文章又要重新迁移一遍了，有点麻烦啊…
+          
+        </div>
+
+        
+        <div>
+          <a class="read-more button"
+            href="/2019/08/07/%E6%9B%B4%E6%8D%A2%E5%88%B0%E6%96%B0%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%9E%B6%E6%9E%84-hexo/">继续阅读 →</a>
+        </div>
+        
+      </div>
+    
+      <div class="post on-list">
+        <h1 class="post-title">
+          <a href="/2018/08/08/%E7%94%A8-arcade-%E5%AD%A6%E4%B9%A0%E5%86%99%E4%B8%80%E6%AC%BE-rpg-%E6%B8%B8%E6%88%8F-%E5%85%A5%E9%97%A8/">用 Arcade 学习写一款 RPG 游戏 —— 入门</a>
+        </h1>
+        <div class="post-meta">
+          <span class="post-date">
+            2018-08-08
+          </span>
+          
+        </div>
+
+        
+
+        
+
+
+      
+        <div class="post-content">
+          
+            你有没有一个想要自己编写游戏的梦想呢？但是却苦于没有太多的编程经验而无从下手？现在有了 Microsoft 家出的 Arcade 平台，只需轻轻拖动方块即可完成游戏编写！不需要你拥有任何的编程经验。 最关键的一点是：它是一个免费的在线编程平台。这也就意味着：
+你不需要为使用这个平台付费，且 你不需要对你的电脑做太多繁琐的环境部署操作。只要有一个合适的浏览器就可以开始了（至于什么是合适的浏览器，后文再讲）。 不过，正因为这是一个浏览器端的项目，所以你需要确保你的设备配置较高，以免在加载较多的 JavaScript 卡崩了你的设备。对于数据的丢失，pokon548 不负任何责任 :)
+这个平台为移动端专门有优化过界面，故请放心地在移动平台上使用 Arcade。操作的逻辑和电脑版没有太大的差异。 pokon548 只是为了方便演示，才使用了电脑。其实并不是只有电脑才能使用这个平台。
+先睹为快 在开始之前，先看看 Arcade 长啥样吧： 丰富的官方示例和教程，不怕找不到学习的材料。 编辑器界面。可以看到所有的游戏逻辑都不是由代码组装起来的，而是一个一个的方块（如果你知道 Scratch，那么这样的界面对你而言应该是再熟悉不过了。什么，你不知道 Scratch 是何物？没关系点我马上了解）。 还能在浏览器上即时游玩你编写的游戏！ 你也有一个博客？不妨考虑下把你写的游戏以 html 代码的放肆插入到博客里吧！据说这样做的博主都提升了自己的“博客回头率”（误）。 怎么样，感觉是不是还不错？那么我们就继续吧！
+确认环境是否可以无误运行 Arcade 为了确保你的环境适合运行 Arcade，而不会出现“写完游戏但保存不到本地”等尴尬情况，请一定按照下面的步骤检查你的环境。
+点击这个链接，进入到 Arcade 网页里。 如果浏览器支持的话，应该最终会出现下面这个界面： （因为我已经用过 Arcade 很多次了，所以“我的项目”里有一些我自己的东西。你可能没有，但不用担心。这不会影响到后面步骤的操作 :)） 如果浏览器不支持 Arcade，那么你应该会看到这个界面： 如果你是后一种情况，那么你就需要安装一个新的浏览器了。个人推荐 Firefox 或者 Chrome，它们对于新标准的支持程度较好。
+找到“积木块类游戏”板块，随意点一个游戏（比如说这里的“Falling Duck”）。并点击“打开示例”。 等待项目加载完毕后，观察界面最后是不是长这个样子。 如果界面元素有任何缺失，都说明浏览器支持程度不好。换一个浏览器吧。
+点击左边的“播放键”，观察游戏是否可以正常在线运行。 不能就换浏览器。
+点击左下角的“下载”，硬件随便点一个（比如说这里的 Meowbit），测试是否能正常下载代码。
+这一步很多浏览器做不了！！ 这一步很多浏览器做不了！！！ 这一步很多浏览器做不了！！！请务必认真对待。 如果能够正常下载代码，最后浏览器应该会提示你下载一个叫做“arcade-……..-.uf2”的文件（如下图所示）。 如果下载的文件名是一串由”data:“开头的字符串，或者压根就没有提示有文件可以下载，那么换浏览器。 如果以上步骤均通过，那么恭喜你，Arcade 在你的设备上可以正常运作！:)
+Arcade 的项目是保存在你的设备上的 注意：Arcade 是一款应用。这也意味着在你第一次在线加载完毕之后，后面你不需要联网也可以打开这个页面。 你所有的项目也是保存在设备本地的。没有存在微软服务器上这一说！除非你使用了“分享”功能！因此，请不要没事的时候就清理一次浏览器的缓存，不然你的项目分分钟没掉！！
+那么，有人肯定会问了：我设备上有一些软件会特别热心的帮我清除浏览器缓存，我该怎么办？没关系。参照下面的步骤把你的项目保存到文件里就好了。 首先，你要先进入编辑器界面。待项目加载完毕后（进度圈不再转的时候），点击下方的“保存按钮”（软盘样子）。 如果一切正常，最后浏览器应该会提醒你下载一个“png”文件（一定有人会问：哎一个图像文件怎么能存储我的项目呢？其实这是一种叫做“二进制拷贝”的东西，具体原理可以戳这里） 将其妥善的保存在设备上即可。如果要让 Arcade 重新加载这个项目，只需要在主界面点击“导入”。 在弹出的对话框里点击“导入文件…”，上传你之前保存的“png文件”即可！ 先玩玩看 那么，这篇文章也就到此为止了。后续的内容将会在新的博文里推出。在继续之前，pokon548 强烈建议你多看看或者玩玩 Aracde 上已有的游戏或者教程，你会受益良多的的。 这也是我第一次试着写教程，所以肯定有一些不足的地方。还望各位能够提建议 :)我会虚心接受的。
+          
+        </div>
+
+        
+        <div>
+          <a class="read-more button"
+            href="/2018/08/08/%E7%94%A8-arcade-%E5%AD%A6%E4%B9%A0%E5%86%99%E4%B8%80%E6%AC%BE-rpg-%E6%B8%B8%E6%88%8F-%E5%85%A5%E9%97%A8/">继续阅读 →</a>
+        </div>
+        
+      </div>
+    
+    <div class="pagination">
+  <div class="pagination__buttons">
+    
+      <span class="button previous">
+        <a href="/posts/page/3/">
+          <span class="button__icon">←</span>
+          <span class="button__text">Newer posts</span>
+        </a>
+      </span>
+    
+    
+      <span class="button next">
+        <a href="/posts/page/5/">
+          <span class="button__text">Older posts</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+    
+  </div>
+</div>
+
+  </div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>pokon548 © 2022</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

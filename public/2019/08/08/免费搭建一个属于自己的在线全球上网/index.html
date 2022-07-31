@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  
+    <title>免费搭建一个属于自己的在线全球上网 :: pokon548 的部落阁</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="丑话先说在前：搭建 Proxy 这件事本身存在着争议性。如果您所在的地区对于在线全球上网抓的很严，请不要这么做。否则被请去喝茶的话，pokon548 不负任何责任 :)
+网络环境越来越紧张。现在很多的代理都不能用了，存活下来的，不少都存在着时断时好的情况。为了流量去中心化，可以考虑自己搭建一个在线 Porxy，以减小 Proxy 被查到的可能性。 好了，废话不多说。下面进入正题。
+申请 Heroku 账号 因为在线全球上网是一个项目，所以我们需要一个主机才能运行它。但是不用担心，有一家国外的主机商 Heroku 有免费空间方案。那么我们就用这家吧！ 首先要做的第一件事，就是去申请一个 Heroku 账号。这个站点位于国外，有免费的空间托管方案。对于我们这种小型在线全球上网来说很适合。 不过这个站点所用的机器人验证器 reCaptcha 被 X 掉了，所以在国内没办法正常注册。怎么办？pokon548 自己目前就有一个在线全球上网节点，你只需要通过这个在线节点注册账号就好。戳我 如果一切正常，如上图所示，你应该可以看到验证码的身影。那么，该怎么填注册信息就怎么填吧！ 填完记得要点验证码进行验证，不然是不能通过注册步骤的！
+登录 Heroku 账号 注册完毕之后，你就可以用刚申请的账号密码登录到 Heroku 了。 注意！由于在线 Proxy 本身的问题，在登陆完毕后会因为 URL 异常导致后续流量不再经过 Proxy 而可能使得页面无法继续加载。如果你遇到这种情况，你可以试试不使用 Proxy 打开这一页。如果行不通，建议你开启科学上网模式后继续尝试登录。至于有什么科学上网的方法…自己找吧 :)
+导入项目 下一步，就是从 GitHub 上把在线全球上网的项目导入到 Heroku 里了。请点击这里，找到位于下面的“Deploy to Heroku”按钮。点击进行导入。 同样的，该步骤不能使用在线全球上网进行操作。 其中，App name 填入你想要给在线全球上网项目的命名。建议不要是一个较为敏感，但却好记的文本（因为后续站点的访问会用到这一文本）。 Choose a region 个人建议点一下选择框后下拉选择 Europe（看你自己所在地的情况），因为选这个节点能够保证在晚上也有较好的速度（个人测试）。 当一切填写完毕后，点击下面的“Deploy app”开始导入应用。
+导入需要时间，请耐心等待… 当导入完成后，你应该可以再页面底部看到“Your app was successfully deployed”的字样。这也就意味着你完成了搭建工作。可以开始使用了。 点击下面的 View，就可以看到你的搭建成果了！" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/2019/08/08/%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%85%A8%E7%90%83%E4%B8%8A%E7%BD%91/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="/assets/blue.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="/img/favicon/blue.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="zh" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="免费搭建一个属于自己的在线全球上网">
+<meta property="og:description" content="丑话先说在前：搭建 Proxy 这件事本身存在着争议性。如果您所在的地区对于在线全球上网抓的很严，请不要这么做。否则被请去喝茶的话，pokon548 不负任何责任 :)
+网络环境越来越紧张。现在很多的代理都不能用了，存活下来的，不少都存在着时断时好的情况。为了流量去中心化，可以考虑自己搭建一个在线 Porxy，以减小 Proxy 被查到的可能性。 好了，废话不多说。下面进入正题。
+申请 Heroku 账号 因为在线全球上网是一个项目，所以我们需要一个主机才能运行它。但是不用担心，有一家国外的主机商 Heroku 有免费空间方案。那么我们就用这家吧！ 首先要做的第一件事，就是去申请一个 Heroku 账号。这个站点位于国外，有免费的空间托管方案。对于我们这种小型在线全球上网来说很适合。 不过这个站点所用的机器人验证器 reCaptcha 被 X 掉了，所以在国内没办法正常注册。怎么办？pokon548 自己目前就有一个在线全球上网节点，你只需要通过这个在线节点注册账号就好。戳我 如果一切正常，如上图所示，你应该可以看到验证码的身影。那么，该怎么填注册信息就怎么填吧！ 填完记得要点验证码进行验证，不然是不能通过注册步骤的！
+登录 Heroku 账号 注册完毕之后，你就可以用刚申请的账号密码登录到 Heroku 了。 注意！由于在线 Proxy 本身的问题，在登陆完毕后会因为 URL 异常导致后续流量不再经过 Proxy 而可能使得页面无法继续加载。如果你遇到这种情况，你可以试试不使用 Proxy 打开这一页。如果行不通，建议你开启科学上网模式后继续尝试登录。至于有什么科学上网的方法…自己找吧 :)
+导入项目 下一步，就是从 GitHub 上把在线全球上网的项目导入到 Heroku 里了。请点击这里，找到位于下面的“Deploy to Heroku”按钮。点击进行导入。 同样的，该步骤不能使用在线全球上网进行操作。 其中，App name 填入你想要给在线全球上网项目的命名。建议不要是一个较为敏感，但却好记的文本（因为后续站点的访问会用到这一文本）。 Choose a region 个人建议点一下选择框后下拉选择 Europe（看你自己所在地的情况），因为选这个节点能够保证在晚上也有较好的速度（个人测试）。 当一切填写完毕后，点击下面的“Deploy app”开始导入应用。
+导入需要时间，请耐心等待… 当导入完成后，你应该可以再页面底部看到“Your app was successfully deployed”的字样。这也就意味着你完成了搭建工作。可以开始使用了。 点击下面的 View，就可以看到你的搭建成果了！" />
+<meta property="og:url" content="/2019/08/08/%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%85%A8%E7%90%83%E4%B8%8A%E7%BD%91/" />
+<meta property="og:site_name" content="pokon548 的部落阁" />
+
+  
+    <meta property="og:image" content="/img/favicon/blue.png">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2019-08-08 21:32:22 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    pokon548@blog
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">关于</a></li>
+        
+      
+        
+          <li><a href="/showcase">精选辑</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">关于</a></li>
+      
+    
+      
+        <li><a href="/showcase">精选辑</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/2019/08/08/%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%85%A8%E7%90%83%E4%B8%8A%E7%BD%91/">免费搭建一个属于自己的在线全球上网</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2019-08-08
+        
+      </span>
+    
+    
+    
+  </div>
+
+  
+  
+
+
+  
+    <div class="table-of-contents">
+      <h2>
+        目录
+      </h2>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#申请-heroku-账号-申请-heroku-账号申请-heroku-账号"><a href="#%E7%94%B3%E8%AF%B7-Heroku-%E8%B4%A6%E5%8F%B7" title="申请 Heroku 账号"></a>申请 Heroku 账号</a></li>
+    <li><a href="#登录-heroku-账号-登录-heroku-账号登录-heroku-账号"><a href="#%E7%99%BB%E5%BD%95-Heroku-%E8%B4%A6%E5%8F%B7" title="登录 Heroku 账号"></a>登录 Heroku 账号</a></li>
+    <li><a href="#导入项目-导入项目导入项目"><a href="#%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE" title="导入项目"></a>导入项目</a></li>
+    <li><a href="#免费版-heroku-的限制-免费版-heroku-的限制免费版-heroku-的限制"><a href="#%E5%85%8D%E8%B4%B9%E7%89%88-Heroku-%E7%9A%84%E9%99%90%E5%88%B6" title="免费版 Heroku 的限制"></a>免费版 Heroku 的限制</a></li>
+    <li><a href="#有现成的-demo-可以用吗-有现成的-demo-可以用吗有现成的-demo-可以用吗"><a href="#%E6%9C%89%E7%8E%B0%E6%88%90%E7%9A%84-Demo-%E5%8F%AF%E4%BB%A5%E7%94%A8%E5%90%97%EF%BC%9F" title="有现成的 Demo 可以用吗？"></a>有现成的 Demo 可以用吗？</a></li>
+  </ul>
+</nav>
+    </div>
+  
+
+  <div class="post-content"><div>
+        <blockquote>
+<p>丑话先说在前：搭建 Proxy 这件事本身存在着争议性。如果您所在的地区对于在线全球上网抓的很严，请不要这么做。否则被请去喝茶的话，pokon548 不负任何责任 :)</p>
+</blockquote>
+<p>网络环境越来越紧张。现在很多的代理都不能用了，存活下来的，不少都存在着时断时好的情况。为了流量去中心化，可以考虑自己搭建一个在线 Porxy，以减小 Proxy 被查到的可能性。
+好了，废话不多说。下面进入正题。</p>
+<h2 id="申请-heroku-账号-申请-heroku-账号申请-heroku-账号"><a href="#%E7%94%B3%E8%AF%B7-Heroku-%E8%B4%A6%E5%8F%B7" title="申请 Heroku 账号"></a>申请 Heroku 账号<a href="#申请-heroku-账号-申请-heroku-账号申请-heroku-账号" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>因为在线全球上网是一个项目，所以我们需要一个主机才能运行它。但是不用担心，有一家国外的主机商 Heroku 有免费空间方案。那么我们就用这家吧！
+首先要做的第一件事，就是去申请一个 Heroku 账号。这个站点位于国外，有免费的空间托管方案。对于我们这种小型在线全球上网来说很适合。
+不过这个站点所用的机器人验证器 reCaptcha 被 X 掉了，所以在国内没办法正常注册。怎么办？pokon548 自己目前就有一个在线全球上网节点，你只需要通过这个在线节点注册账号就好。<a href="https://illwaworld.herokuapp.com/proxy/https://signup.heroku.com/login">戳我</a>
+<img src="https://i.loli.net/2019/08/08/oh4CZPlQ3Gt6AUW.png" alt="如果一切正常的话">
+如果一切正常，如上图所示，你应该可以看到验证码的身影。那么，该怎么填注册信息就怎么填吧！
+<em>填完记得要点验证码进行验证，不然是不能通过注册步骤的！</em></p>
+<h2 id="登录-heroku-账号-登录-heroku-账号登录-heroku-账号"><a href="#%E7%99%BB%E5%BD%95-Heroku-%E8%B4%A6%E5%8F%B7" title="登录 Heroku 账号"></a>登录 Heroku 账号<a href="#登录-heroku-账号-登录-heroku-账号登录-heroku-账号" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>注册完毕之后，你就可以用刚申请的账号密码登录到 Heroku 了。
+<img src="https://i.loli.net/2019/08/08/Eok6HB7ljZb9O1z.png" alt="登录到 Heroku"></p>
+<p><em>注意！由于在线 Proxy 本身的问题，在登陆完毕后会因为 URL 异常导致后续流量不再经过 Proxy 而可能使得页面无法继续加载。如果你遇到这种情况，你可以试试不使用 Proxy 打开这一页。如果行不通，建议你开启科学上网模式后继续尝试登录。至于有什么科学上网的方法…自己找吧 :)</em></p>
+<h2 id="导入项目-导入项目导入项目"><a href="#%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE" title="导入项目"></a>导入项目<a href="#导入项目-导入项目导入项目" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>下一步，就是从 GitHub 上把在线全球上网的项目导入到 Heroku 里了。请点击<a href="https://github.com/gfw-breaker/heroku-node-proxy">这里</a>，找到位于下面的“Deploy to Heroku”按钮。点击进行导入。
+<img src="https://i.loli.net/2019/08/08/VIXsvFnU4KQrJLb.png" alt="Deploy to Heroku">
+<em>同样的，该步骤不能使用在线全球上网进行操作。</em>
+其中，App name 填入你想要给在线全球上网项目的命名。建议不要是一个较为敏感，但却好记的文本（因为后续站点的访问会用到这一文本）。
+Choose a region 个人建议点一下选择框后下拉选择 Europe（看你自己所在地的情况），因为选这个节点能够保证在晚上也有较好的速度（个人测试）。
+<img src="https://i.loli.net/2019/08/08/WBcAQZE6eohUFHr.png" alt="Deploy&amp;hellip;">
+当一切填写完毕后，点击下面的“Deploy app”开始导入应用。</p>
+<p>导入需要时间，请耐心等待…
+<img src="https://i.loli.net/2019/08/08/8YtC7nEV2OgTDIr.png" alt="Deploying&amp;hellip;"></p>
+<p>当导入完成后，你应该可以再页面底部看到“Your app was successfully deployed”的字样。这也就意味着你完成了搭建工作。可以开始使用了。
+点击下面的 View，就可以看到你的搭建成果了！</p>
+<p><em>使用这个项目时，请务必确保你用的是 HTTPS 协议。否则出现任何问题 pokon548 概不负责 :)</em></p>
+<h2 id="免费版-heroku-的限制-免费版-heroku-的限制免费版-heroku-的限制"><a href="#%E5%85%8D%E8%B4%B9%E7%89%88-Heroku-%E7%9A%84%E9%99%90%E5%88%B6" title="免费版 Heroku 的限制"></a>免费版 Heroku 的限制<a href="#免费版-heroku-的限制-免费版-heroku-的限制免费版-heroku-的限制" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>截止目前，Heroku 对于免费版账号部署的项目有这些限制：</p>
+<ul>
+<li>一天只能有 18 小时的活跃时长，超过即停止服务。次日恢复。</li>
+<li>一个账号最多只能部署 5 个项目。</li>
+<li>应用会自动休眠。当有请求时又会自动激活。</li>
+</ul>
+<h2 id="有现成的-demo-可以用吗-有现成的-demo-可以用吗有现成的-demo-可以用吗"><a href="#%E6%9C%89%E7%8E%B0%E6%88%90%E7%9A%84-Demo-%E5%8F%AF%E4%BB%A5%E7%94%A8%E5%90%97%EF%BC%9F" title="有现成的 Demo 可以用吗？"></a>有现成的 Demo 可以用吗？<a href="#有现成的-demo-可以用吗-有现成的-demo-可以用吗有现成的-demo-可以用吗" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>有。你可以点这里试用我自己搭的一个节点：<a href="https://illwaworld.herokuapp.com/">点我</a>
+公用节点存在随时凉掉的可能性。建议有机会的时候自己弄一个。</p>
+
+      </div></div>
+
+  
+  
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">阅读其他文章</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="/2019/08/08/%E7%94%A8-arcade-%E5%AD%A6%E4%B9%A0%E5%86%99%E4%B8%80%E6%AC%BE-rpg-%E6%B8%B8%E6%88%8F-%E8%AE%A9%E4%B8%BB%E8%A7%92%E5%8A%A8%E8%B5%B7%E6%9D%A5/">
+                <span class="button__icon">←</span>
+                <span class="button__text">用 Arcade 学习写一款 RPG 游戏 —— 让主角动起来</span>
+            </a>
+        </span>
+        
+        
+        <span class="button next">
+            <a href="/2019/08/08/django-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                <span class="button__text">Django 学习笔记</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+  <head>
+  ..
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  ...
+</head>
+<body>
+  ...
+  <div id="vcomments"></div>
+  <script>
+      new Valine({
+          el: '#vcomments',
+          appId: '5NERYXkQTWVp5yJE2FM0nQ1i-MdYXbMMI',
+          appKey: 'zy5BwyvSkpgiNjFwKYfbixSs',
+          serverURLs: 'https://5neryxkq.api.lncldglobal.com',
+          avatar: 'retro',
+          visitor: true
+      })
+  </script>
+</body>
+  
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>pokon548 © 2022</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  
+    <title>用 Arcade 学习写一款 RPG 游戏 —— 让主角动起来 :: pokon548 的部落阁</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="前一篇文章已经提到了如何使用 Arcade 这一十分方便的在线游戏编程学习平台。那么这次我们就来正式开始写游戏吧！
+进入 Arcade 并创建游戏项目 首先，请戳这里进入 Arcade 平台。在页面加载完毕后，找到“我的项目”，并点击大大的紫色按钮“新建项目”。 新建项目可能需要一点时间，请耐心等待进度条停止显示。 当界面变成下图模样时，即代表项目已经创建完成。可以开始了！ 游戏主人公 —— 精灵 在 Arcade 中，游戏主人公以及其它各种各样的 RPG 都有一个统称，叫做“精灵”（不要问我为什么叫这个）。 通过创建精灵，你可以为游戏添加主人公、NPC、怪兽、云（对，就是每天在我们天上飘的那个）、子弹（对，你没有看错，它真的可以干这个）等等… 可以说，这个是游戏里面相当重要的一环了。
+创建精灵 那么，该怎么创建一个精灵呢？很简单。点击左侧的“精灵”分区，把这个方块拖出来即可。 给精灵皮肤 你一定不会想要你的主角在屏幕上是透明的存在吧（当然如果你要五毛钱特效当我没说）？为了让主人公富有活力，同时让玩家有玩这款游戏的欲望，我们需要给精灵一层皮肤。 当然了，手动绘制一个精灵的皮肤不是我们这篇博文的重点。故我们就使用 Arcade 自带的主角皮肤就好（相信我，其实自带的皮肤还挺帅的）。
+要给精灵加上皮肤，请找到你刚刚拖出来的方块，点击这个灰色的地方。 接下来，你应该会看到这样的一个弹出框。这个就是皮肤的编辑框了。 然后，我们切换到“Gallery”分栏里，选择 Arcade 自带的主角皮肤。选择完后，点击“完成”。 这样，我们的主角就有皮肤了。
+Arcade 目前只支持 16 位色的显示！ 如果你是一个特别喜欢各种颜色搭配的 Geek，那么 Arcade 也许会让你小小的失望一番 —— 其（不包括透明色）只支持 16 种颜色的显示。 这也是为什么皮肤编辑器里没有“RGB调色板“一类东西的原因。不过相信我，16 位色在学习游戏开发的过程中完全够用，因此不需要太过于担心。
+让主人公动起来 你也许注意到了一点：我们现在拖出来的那个方块“失去了颜色”。这是不是在提醒着我们什么？如果你敏锐的感受到了这一点，那么 pokon548 向你表示小小的祝贺！的确！这提醒我们：这个方块目前不会产生实际的效果。 什么意思呢？让我们先点击左侧的“播放按钮”看看目前这个项目运行的结果。 你会发现：左侧模拟器的“屏幕”上最终什么都没有。没有显示出我们刚刚创建出来的主角。怎么回事呢？
+一般游戏的运行逻辑 这就要谈到目前常见游戏的运转逻辑了。在现代的常见游戏中，无论是选关、得到道具、NPC 的交流、主人公的行走等，都是在一个循环里面进行的。 而要让这一切发生，我们首先要进行“初始化”操作。如果你不明白这个词的含义，举个例子：要让主角在后面的循环中动起来，我们必须要先有一个主角才行（不然主角是幽灵吗滑稽）。不然后面的循环里我们要操作什么呢？
+进行“初始化”操作 回到项目上。我们刚刚创建“主人公”这一动作其实就是“初始化”操作的一部分。而为了让这个方块发挥其初始化主角的作用，我们要把这个方块拖动到绿色的“当开机时”的方块内。 下面是操作方法的动态示意图： 你看，方块是不是恢复到正常颜色了？我们现在再试试点击”播放“按钮，看看项目的运行情况。 我们的主角出现了哦！真棒！
+让主人公能够运动起来 也许你之前曾试过点击左侧模拟器的方向键。如果没有的话，pokon548 推荐你现在就点点看。 没有任何效果？那就对了。因为我们还没做好这个功能呢！唔…接下来我们要做的，就是让主角能够在我们按下方向键的时候动起来！ 听起来似乎很复杂的样子。但是在 Arcade 里面，我们只需要另外一个方块就可以搞定啦！" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/2019/08/08/%E7%94%A8-arcade-%E5%AD%A6%E4%B9%A0%E5%86%99%E4%B8%80%E6%AC%BE-rpg-%E6%B8%B8%E6%88%8F-%E8%AE%A9%E4%B8%BB%E8%A7%92%E5%8A%A8%E8%B5%B7%E6%9D%A5/" />
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="/assets/blue.css">
+
+
+
+
+
+
+<link rel="apple-touch-icon" href="/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="/img/favicon/blue.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="zh" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="用 Arcade 学习写一款 RPG 游戏 —— 让主角动起来">
+<meta property="og:description" content="前一篇文章已经提到了如何使用 Arcade 这一十分方便的在线游戏编程学习平台。那么这次我们就来正式开始写游戏吧！
+进入 Arcade 并创建游戏项目 首先，请戳这里进入 Arcade 平台。在页面加载完毕后，找到“我的项目”，并点击大大的紫色按钮“新建项目”。 新建项目可能需要一点时间，请耐心等待进度条停止显示。 当界面变成下图模样时，即代表项目已经创建完成。可以开始了！ 游戏主人公 —— 精灵 在 Arcade 中，游戏主人公以及其它各种各样的 RPG 都有一个统称，叫做“精灵”（不要问我为什么叫这个）。 通过创建精灵，你可以为游戏添加主人公、NPC、怪兽、云（对，就是每天在我们天上飘的那个）、子弹（对，你没有看错，它真的可以干这个）等等… 可以说，这个是游戏里面相当重要的一环了。
+创建精灵 那么，该怎么创建一个精灵呢？很简单。点击左侧的“精灵”分区，把这个方块拖出来即可。 给精灵皮肤 你一定不会想要你的主角在屏幕上是透明的存在吧（当然如果你要五毛钱特效当我没说）？为了让主人公富有活力，同时让玩家有玩这款游戏的欲望，我们需要给精灵一层皮肤。 当然了，手动绘制一个精灵的皮肤不是我们这篇博文的重点。故我们就使用 Arcade 自带的主角皮肤就好（相信我，其实自带的皮肤还挺帅的）。
+要给精灵加上皮肤，请找到你刚刚拖出来的方块，点击这个灰色的地方。 接下来，你应该会看到这样的一个弹出框。这个就是皮肤的编辑框了。 然后，我们切换到“Gallery”分栏里，选择 Arcade 自带的主角皮肤。选择完后，点击“完成”。 这样，我们的主角就有皮肤了。
+Arcade 目前只支持 16 位色的显示！ 如果你是一个特别喜欢各种颜色搭配的 Geek，那么 Arcade 也许会让你小小的失望一番 —— 其（不包括透明色）只支持 16 种颜色的显示。 这也是为什么皮肤编辑器里没有“RGB调色板“一类东西的原因。不过相信我，16 位色在学习游戏开发的过程中完全够用，因此不需要太过于担心。
+让主人公动起来 你也许注意到了一点：我们现在拖出来的那个方块“失去了颜色”。这是不是在提醒着我们什么？如果你敏锐的感受到了这一点，那么 pokon548 向你表示小小的祝贺！的确！这提醒我们：这个方块目前不会产生实际的效果。 什么意思呢？让我们先点击左侧的“播放按钮”看看目前这个项目运行的结果。 你会发现：左侧模拟器的“屏幕”上最终什么都没有。没有显示出我们刚刚创建出来的主角。怎么回事呢？
+一般游戏的运行逻辑 这就要谈到目前常见游戏的运转逻辑了。在现代的常见游戏中，无论是选关、得到道具、NPC 的交流、主人公的行走等，都是在一个循环里面进行的。 而要让这一切发生，我们首先要进行“初始化”操作。如果你不明白这个词的含义，举个例子：要让主角在后面的循环中动起来，我们必须要先有一个主角才行（不然主角是幽灵吗滑稽）。不然后面的循环里我们要操作什么呢？
+进行“初始化”操作 回到项目上。我们刚刚创建“主人公”这一动作其实就是“初始化”操作的一部分。而为了让这个方块发挥其初始化主角的作用，我们要把这个方块拖动到绿色的“当开机时”的方块内。 下面是操作方法的动态示意图： 你看，方块是不是恢复到正常颜色了？我们现在再试试点击”播放“按钮，看看项目的运行情况。 我们的主角出现了哦！真棒！
+让主人公能够运动起来 也许你之前曾试过点击左侧模拟器的方向键。如果没有的话，pokon548 推荐你现在就点点看。 没有任何效果？那就对了。因为我们还没做好这个功能呢！唔…接下来我们要做的，就是让主角能够在我们按下方向键的时候动起来！ 听起来似乎很复杂的样子。但是在 Arcade 里面，我们只需要另外一个方块就可以搞定啦！" />
+<meta property="og:url" content="/2019/08/08/%E7%94%A8-arcade-%E5%AD%A6%E4%B9%A0%E5%86%99%E4%B8%80%E6%AC%BE-rpg-%E6%B8%B8%E6%88%8F-%E8%AE%A9%E4%B8%BB%E8%A7%92%E5%8A%A8%E8%B5%B7%E6%9D%A5/" />
+<meta property="og:site_name" content="pokon548 的部落阁" />
+
+  
+    <meta property="og:image" content="/img/favicon/blue.png">
+  
+
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+  <meta property="article:published_time" content="2019-08-08 21:32:41 &#43;0800 CST" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="blue">
+
+
+<div class="container headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    pokon548@blog
+  </div>
+</a>
+
+    </div>
+    
+      <div class="menu-trigger">menu</div>
+    
+  </div>
+  
+    <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/about">关于</a></li>
+        
+      
+        
+          <li><a href="/showcase">精选辑</a></li>
+        
+      
+      
+    
+
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/about">关于</a></li>
+      
+    
+      
+        <li><a href="/showcase">精选辑</a></li>
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<div class="post">
+  <h1 class="post-title">
+    <a href="/2019/08/08/%E7%94%A8-arcade-%E5%AD%A6%E4%B9%A0%E5%86%99%E4%B8%80%E6%AC%BE-rpg-%E6%B8%B8%E6%88%8F-%E8%AE%A9%E4%B8%BB%E8%A7%92%E5%8A%A8%E8%B5%B7%E6%9D%A5/">用 Arcade 学习写一款 RPG 游戏 —— 让主角动起来</a></h1>
+  <div class="post-meta">
+    
+      <span class="post-date">
+        2019-08-08
+        
+      </span>
+    
+    
+    
+  </div>
+
+  
+  
+
+
+  
+    <div class="table-of-contents">
+      <h2>
+        目录
+      </h2>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#进入-arcade-并创建游戏项目-进入-arcade-并创建游戏项目进入-arcade-并创建游戏项目"><a href="#%E8%BF%9B%E5%85%A5-Arcade-%E5%B9%B6%E5%88%9B%E5%BB%BA%E6%B8%B8%E6%88%8F%E9%A1%B9%E7%9B%AE" title="进入 Arcade 并创建游戏项目"></a>进入 Arcade 并创建游戏项目</a></li>
+    <li><a href="#游戏主人公--精灵-游戏主人公--精灵游戏主人公--精灵"><a href="#%E6%B8%B8%E6%88%8F%E4%B8%BB%E4%BA%BA%E5%85%AC-%E2%80%94%E2%80%94-%E7%B2%BE%E7%81%B5" title="游戏主人公 —— 精灵"></a>游戏主人公 —— 精灵</a>
+      <ul>
+        <li><a href="#创建精灵-创建精灵创建精灵"><a href="#%E5%88%9B%E5%BB%BA%E7%B2%BE%E7%81%B5" title="创建精灵"></a>创建精灵</a></li>
+        <li><a href="#给精灵皮肤-给精灵皮肤给精灵皮肤"><a href="#%E7%BB%99%E7%B2%BE%E7%81%B5%E7%9A%AE%E8%82%A4" title="给精灵皮肤"></a>给精灵皮肤</a></li>
+      </ul>
+    </li>
+    <li><a href="#让主人公动起来-让主人公动起来让主人公动起来"><a href="#%E8%AE%A9%E4%B8%BB%E4%BA%BA%E5%85%AC%E5%8A%A8%E8%B5%B7%E6%9D%A5" title="让主人公动起来"></a>让主人公动起来</a>
+      <ul>
+        <li><a href="#一般游戏的运行逻辑-一般游戏的运行逻辑一般游戏的运行逻辑"><a href="#%E4%B8%80%E8%88%AC%E6%B8%B8%E6%88%8F%E7%9A%84%E8%BF%90%E8%A1%8C%E9%80%BB%E8%BE%91" title="一般游戏的运行逻辑"></a>一般游戏的运行逻辑</a></li>
+        <li><a href="#进行初始化操作-进行初始化操作进行初始化操作"><a href="#%E8%BF%9B%E8%A1%8C%E2%80%9C%E5%88%9D%E5%A7%8B%E5%8C%96%E2%80%9D%E6%93%8D%E4%BD%9C" title="进行“初始化”操作"></a>进行“初始化”操作</a></li>
+        <li><a href="#让主人公能够运动起来-让主人公能够运动起来让主人公能够运动起来"><a href="#%E8%AE%A9%E4%B8%BB%E4%BA%BA%E5%85%AC%E8%83%BD%E5%A4%9F%E8%BF%90%E5%8A%A8%E8%B5%B7%E6%9D%A5" title="让主人公能够运动起来"></a>让主人公能够运动起来</a></li>
+      </ul>
+    </li>
+    <li><a href="#示例代码-示例代码示例代码"><a href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81" title="示例代码"></a>示例代码</a></li>
+    <li><a href="#小结-小结小结"><a href="#%E5%B0%8F%E7%BB%93" title="小结"></a>小结</a></li>
+    <li><a href="#开始下一节-开始下一节开始下一节"><a href="#%E5%BC%80%E5%A7%8B%E4%B8%8B%E4%B8%80%E8%8A%82" title="开始下一节"></a>开始下一节</a></li>
+  </ul>
+</nav>
+    </div>
+  
+
+  <div class="post-content"><div>
+        <p><a href="https://pokon548.ink/2019/08/08/%E7%94%A8-Arcade-%E5%AD%A6%E4%B9%A0%E5%86%99%E4%B8%80%E6%AC%BE-RPG-%E6%B8%B8%E6%88%8F-%E2%80%94%E2%80%94-%E5%85%A5%E9%97%A8/">前一篇文章</a>已经提到了如何使用 Arcade 这一十分方便的在线游戏编程学习平台。那么这次我们就来正式开始写游戏吧！</p>
+<h2 id="进入-arcade-并创建游戏项目-进入-arcade-并创建游戏项目进入-arcade-并创建游戏项目"><a href="#%E8%BF%9B%E5%85%A5-Arcade-%E5%B9%B6%E5%88%9B%E5%BB%BA%E6%B8%B8%E6%88%8F%E9%A1%B9%E7%9B%AE" title="进入 Arcade 并创建游戏项目"></a>进入 Arcade 并创建游戏项目<a href="#进入-arcade-并创建游戏项目-进入-arcade-并创建游戏项目进入-arcade-并创建游戏项目" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>首先，请戳<a href="https://arcade.makecode.com/">这里</a>进入 Arcade 平台。在页面加载完毕后，找到“我的项目”，并点击大大的紫色按钮“新建项目”。
+<img src="https://i.loli.net/2019/08/08/MNneU5hAbaJ1TSv.png" alt="深度截图20190808162305.png"></p>
+<p>新建项目可能需要一点时间，请耐心等待进度条停止显示。
+<img src="https://i.loli.net/2019/08/08/WCBvyArxL5gRw4D.png" alt="深度截图20190808162503.png"></p>
+<p>当界面变成下图模样时，即代表项目已经创建完成。可以开始了！
+<img src="https://i.loli.net/2019/08/08/5nNPVhMjJrcqaCG.png" alt="深度截图20190808162633.png"></p>
+<h2 id="游戏主人公--精灵-游戏主人公--精灵游戏主人公--精灵"><a href="#%E6%B8%B8%E6%88%8F%E4%B8%BB%E4%BA%BA%E5%85%AC-%E2%80%94%E2%80%94-%E7%B2%BE%E7%81%B5" title="游戏主人公 —— 精灵"></a>游戏主人公 —— 精灵<a href="#游戏主人公--精灵-游戏主人公--精灵游戏主人公--精灵" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>在 Arcade 中，游戏主人公以及其它各种各样的 RPG 都有一个统称，叫做“精灵”（不要问我为什么叫这个）。
+<img src="https://i.loli.net/2019/08/08/owhpa1W4dQegrtv.png" alt="深度截图选择区域20190808162821.png">
+通过创建精灵，你可以为游戏添加主人公、NPC、怪兽、云（对，就是每天在我们天上飘的那个）、子弹（对，你没有看错，它真的可以干这个）等等… 可以说，这个是游戏里面相当重要的一环了。</p>
+<h3 id="创建精灵-创建精灵创建精灵"><a href="#%E5%88%9B%E5%BB%BA%E7%B2%BE%E7%81%B5" title="创建精灵"></a>创建精灵<a href="#创建精灵-创建精灵创建精灵" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>那么，该怎么创建一个精灵呢？很简单。点击左侧的“精灵”分区，把这个方块拖出来即可。
+<img src="https://i.loli.net/2019/08/08/yvTqoua2j5mrgzB.gif" alt="深度录屏选择区域20190808165056.gif"></p>
+<h3 id="给精灵皮肤-给精灵皮肤给精灵皮肤"><a href="#%E7%BB%99%E7%B2%BE%E7%81%B5%E7%9A%AE%E8%82%A4" title="给精灵皮肤"></a>给精灵皮肤<a href="#给精灵皮肤-给精灵皮肤给精灵皮肤" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>你一定不会想要你的主角在屏幕上是透明的存在吧（当然如果你要五毛钱特效当我没说）？为了让主人公富有活力，同时让玩家有玩这款游戏的欲望，我们需要给精灵一层皮肤。
+当然了，手动绘制一个精灵的皮肤不是我们这篇博文的重点。故我们就使用 Arcade 自带的主角皮肤就好（相信我，其实自带的皮肤还挺帅的）。</p>
+<p>要给精灵加上皮肤，请找到你刚刚拖出来的方块，点击这个灰色的地方。
+<img src="https://i.loli.net/2019/08/08/n4HsdEwkRiGftzO.gif" alt="深度录屏选择区域20190808171751.gif"></p>
+<p>接下来，你应该会看到这样的一个弹出框。这个就是皮肤的编辑框了。
+<img src="https://i.loli.net/2019/08/08/aQN7ySr3EkldhgU.png" alt="深度截图选择区域20190808163900.png"></p>
+<p>然后，我们切换到“Gallery”分栏里，选择 Arcade 自带的主角皮肤。选择完后，点击“完成”。
+<img src="https://i.loli.net/2019/08/08/HJwv2nUD1NlVBXC.gif" alt="深度录屏选择区域20190808164110.gif"></p>
+<p>这样，我们的主角就有皮肤了。</p>
+<blockquote>
+<h4 id="arcade-目前只支持-16-位色的显示-arcade-目前只支持-16-位色的显示arcade-目前只支持-16-位色的显示"><a href="#Arcade-%E7%9B%AE%E5%89%8D%E5%8F%AA%E6%94%AF%E6%8C%81-16-%E4%BD%8D%E8%89%B2%E7%9A%84%E6%98%BE%E7%A4%BA%EF%BC%81" title="Arcade 目前只支持 16 位色的显示！"></a>Arcade 目前只支持 16 位色的显示！<a href="#arcade-目前只支持-16-位色的显示-arcade-目前只支持-16-位色的显示arcade-目前只支持-16-位色的显示" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>如果你是一个特别喜欢各种颜色搭配的 Geek，那么 Arcade 也许会让你小小的失望一番 —— 其（不包括透明色）只支持 16 种颜色的显示。
+这也是为什么皮肤编辑器里没有“RGB调色板“一类东西的原因。不过相信我，16 位色在学习游戏开发的过程中完全够用，因此不需要太过于担心。</p>
+</blockquote>
+<h2 id="让主人公动起来-让主人公动起来让主人公动起来"><a href="#%E8%AE%A9%E4%B8%BB%E4%BA%BA%E5%85%AC%E5%8A%A8%E8%B5%B7%E6%9D%A5" title="让主人公动起来"></a>让主人公动起来<a href="#让主人公动起来-让主人公动起来让主人公动起来" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>你也许注意到了一点：我们现在拖出来的那个方块“失去了颜色”。这是不是在提醒着我们什么？如果你敏锐的感受到了这一点，那么 pokon548 向你表示小小的祝贺！的确！这提醒我们：这个方块目前不会产生实际的效果。
+什么意思呢？让我们先点击左侧的“播放按钮”看看目前这个项目运行的结果。
+<img src="https://i.loli.net/2019/08/08/raDYKIwg2ChxWej.png" alt="深度截图择区域20190808165919.png"></p>
+<p>你会发现：左侧模拟器的“屏幕”上最终什么都没有。没有显示出我们刚刚创建出来的主角。怎么回事呢？</p>
+<h3 id="一般游戏的运行逻辑-一般游戏的运行逻辑一般游戏的运行逻辑"><a href="#%E4%B8%80%E8%88%AC%E6%B8%B8%E6%88%8F%E7%9A%84%E8%BF%90%E8%A1%8C%E9%80%BB%E8%BE%91" title="一般游戏的运行逻辑"></a>一般游戏的运行逻辑<a href="#一般游戏的运行逻辑-一般游戏的运行逻辑一般游戏的运行逻辑" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>这就要谈到目前常见游戏的运转逻辑了。在现代的常见游戏中，无论是选关、得到道具、NPC 的交流、主人公的行走等，都是在一个循环里面进行的。
+而要让这一切发生，我们首先要进行“初始化”操作。如果你不明白这个词的含义，举个例子：要让主角在后面的循环中动起来，我们必须要先有一个主角才行（不然主角是幽灵吗滑稽）。不然后面的循环里我们要操作什么呢？</p>
+<h3 id="进行初始化操作-进行初始化操作进行初始化操作"><a href="#%E8%BF%9B%E8%A1%8C%E2%80%9C%E5%88%9D%E5%A7%8B%E5%8C%96%E2%80%9D%E6%93%8D%E4%BD%9C" title="进行“初始化”操作"></a>进行“初始化”操作<a href="#进行初始化操作-进行初始化操作进行初始化操作" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>回到项目上。我们刚刚创建“主人公”这一动作其实就是“初始化”操作的一部分。而为了让这个方块发挥其初始化主角的作用，我们要把这个方块拖动到绿色的“当开机时”的方块内。
+下面是操作方法的动态示意图：
+<img src="https://i.loli.net/2019/08/08/SlzYtpmhPFJwybU.gif" alt="深度录屏选择区域20190808170740.gif"></p>
+<p>你看，方块是不是恢复到正常颜色了？我们现在再试试点击”播放“按钮，看看项目的运行情况。
+<img src="https://i.loli.net/2019/08/08/cPen7m8zxldTRNY.png" alt="深度截图选择区域20190808170958.png"></p>
+<p>我们的主角出现了哦！真棒！</p>
+<h3 id="让主人公能够运动起来-让主人公能够运动起来让主人公能够运动起来"><a href="#%E8%AE%A9%E4%B8%BB%E4%BA%BA%E5%85%AC%E8%83%BD%E5%A4%9F%E8%BF%90%E5%8A%A8%E8%B5%B7%E6%9D%A5" title="让主人公能够运动起来"></a>让主人公能够运动起来<a href="#让主人公能够运动起来-让主人公能够运动起来让主人公能够运动起来" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>也许你之前曾试过点击左侧模拟器的方向键。如果没有的话，pokon548 推荐你现在就点点看。
+<img src="https://i.loli.net/2019/08/08/BWVJ6USbes4Tv8N.png" alt="深度截图选择区域20190808173851.png"></p>
+<p>没有任何效果？那就对了。因为我们还没做好这个功能呢！唔…接下来我们要做的，就是让主角能够在我们按下方向键的时候动起来！
+听起来似乎很复杂的样子。但是在 Arcade 里面，我们只需要另外一个方块就可以搞定啦！</p>
+<p>要让主角跟随方向键的<!-- raw HTML omitted -->律动<!-- raw HTML omitted -->指引动起来，我们要在“控制器”分区里找到这个方块，并将其放置在“主角初始化”方块的下方。</p>
+<p><img src="https://i.loli.net/2019/08/08/p3MC7VloPeywISW.gif" alt="深度录屏选择区域20190808180326.gif"></p>
+<blockquote>
+<h4 id="小心别张冠李戴-小心别张冠李戴小心别张冠李戴"><a href="#%E5%B0%8F%E5%BF%83%EF%BC%81%E5%88%AB%E5%BC%A0%E5%86%A0%E6%9D%8E%E6%88%B4" title="小心！别张冠李戴"></a>小心！别张冠李戴<a href="#小心别张冠李戴-小心别张冠李戴小心别张冠李戴" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>如果你先前不小心多创建了一些精灵，那么变量名可能会混乱起来。如果要保证“控制器”方块能够起作用，必须要保证主角的“名字”（这里是指变量名）前后一致。比如上面的示意图中，两个方块指向的“名字”是不一样的，要将其改成一样的才可以。
+要将其改成一样的，请按下图方式操作。
+<img src="https://i.loli.net/2019/08/08/KcNzeXJGMAdqSVa.gif" alt="深度录屏选择区域20190808174506.gif"></p>
+</blockquote>
+<p>好了，现在主角应该就可以动起来了。试试点击左侧的方向键（记得要先点击“播放”按钮运行项目！以后不再提示），主角是否运动起来了？</p>
+<h2 id="示例代码-示例代码示例代码"><a href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81" title="示例代码"></a>示例代码<a href="#示例代码-示例代码示例代码" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<!-- raw HTML omitted -->
+<h2 id="小结-小结小结"><a href="#%E5%B0%8F%E7%BB%93" title="小结"></a>小结<a href="#小结-小结小结" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>通过本次文章的学习，你应该知道：</p>
+<ul>
+<li>如何使用 Arcade 创建项目。</li>
+<li>如何创建主角。</li>
+<li>如何给主角换皮肤。</li>
+<li>如何让主角能够成功的跟随方向键的节奏动起来。</li>
+</ul>
+<p>学习任何一件事情都不是那么容易，故 pokon548 建议你“每天只学一章”本教程。每天只学习一章，看似进度缓慢，但却为你后续的学习打下了坚实的基础。通过这样的学习方式，你的学习难度将“不升反降”，后面越学越轻松。
+心急吃不了热豆腐！请一定要慢下学习的节奏，以期慢工出细活。</p>
+<h2 id="开始下一节-开始下一节开始下一节"><a href="#%E5%BC%80%E5%A7%8B%E4%B8%8B%E4%B8%80%E8%8A%82" title="开始下一节"></a>开始下一节<a href="#开始下一节-开始下一节开始下一节" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>当你能够对这张的内容游刃有余后，就可以开始下一章的学习了。如果是这样，请<a href="https://pokon548.ink/2019/08/09/%E7%94%A8-Arcade-%E5%AD%A6%E4%B9%A0%E5%86%99%E4%B8%80%E6%AC%BE-RPG-%E6%B8%B8%E6%88%8F-%E2%80%94%E2%80%94-%E7%BB%98%E5%88%B6%E5%9C%BA%E6%99%AF">点这里</a>。</p>
+
+      </div></div>
+
+  
+  
+<div class="pagination">
+    <div class="pagination__title">
+        <span class="pagination__title-h">阅读其他文章</span>
+        <hr />
+    </div>
+    <div class="pagination__buttons">
+        
+        <span class="button previous">
+            <a href="/2019/08/09/kindle-%E8%BF%99%E7%83%AD%E6%9B%B4%E6%96%B0%E6%9C%89%E6%AF%92%E5%90%A7/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Kindle 这热更新有毒吧</span>
+            </a>
+        </span>
+        
+        
+        <span class="button next">
+            <a href="/2019/08/08/%E5%85%8D%E8%B4%B9%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%9C%A8%E7%BA%BF%E5%85%A8%E7%90%83%E4%B8%8A%E7%BD%91/">
+                <span class="button__text">免费搭建一个属于自己的在线全球上网</span>
+                <span class="button__icon">→</span>
+            </a>
+        </span>
+        
+    </div>
+</div>
+
+  
+
+  
+  <head>
+  ..
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  ...
+</head>
+<body>
+  ...
+  <div id="vcomments"></div>
+  <script>
+      new Valine({
+          el: '#vcomments',
+          appId: '5NERYXkQTWVp5yJE2FM0nQ1i-MdYXbMMI',
+          appKey: 'zy5BwyvSkpgiNjFwKYfbixSs',
+          serverURLs: 'https://5neryxkq.api.lncldglobal.com',
+          avatar: 'retro',
+          visitor: true
+      })
+  </script>
+</body>
+  
+</div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright copyright--user">
+        <span>pokon548 © 2022</span>
+    
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
