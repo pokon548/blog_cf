@@ -3,6 +3,7 @@ languageCode = "zh-cn"
 defaultContentLanguage = "zh"
 theme = "terminal"
 paginate = 5
+enableRobotsTXT = true
 
 [params]
   # dir name of your main content (default is `content/posts`).
@@ -60,6 +61,14 @@ paginate = 5
   changefreq = 'monthly'
   filename = 'sitemap.xml'
   priority = 0.5
+
+[module]
+
+[[module.imports]]
+path = "github.com/davidsneighbour/hugo-robots"
+disable = false
+ignoreConfig = false
+ignoreImports = false
 
 [languages]
   [languages.zh]
