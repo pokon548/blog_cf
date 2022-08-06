@@ -73,6 +73,9 @@
 
 <script>
   window.addEventListener("load", function () {
-    baguetteBox.run(".lightbox");
+    baguetteBox.run(".lightbox", {
+      async: false,
+      noScrollbars: true
+    });
   });
 </script>
