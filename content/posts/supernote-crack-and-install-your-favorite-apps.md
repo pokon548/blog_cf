@@ -1,7 +1,7 @@
 +++
 title = "绕过限制，为 Supernote 安装第三方程序"
 date = "2022-08-06T13:12:14+08:00"
-cover = "https://share.pokon548.ink/api/name/banner3.230189d4.webp?path=/%F0%9F%97%BA%EF%B8%8F%20%E5%9B%BE%E5%BA%8A/banner3.230189d4.webp"
+cover = "https://s1.ax1x.com/2022/08/06/vuF5sP.jpg"
 tags = ["supernote", "sideload", "hack"]
 keywords = ["supernote", "sideload", "hack"]
 description = "把你的 Supernote 变成一个又能写字，又能轻办公，岂不是非常爽？"
