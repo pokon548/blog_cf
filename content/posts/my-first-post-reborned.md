@@ -2,6 +2,7 @@
 title = "博客的重生"
 date = "2022-07-31T16:38:18+08:00"
 author = ""
+cover = "https://s1.ax1x.com/2022/08/06/vu58dU.jpg"
 authorTwitter = "" #do not include @
 tags = ["reborn"]
 keywords = ["reborn"]

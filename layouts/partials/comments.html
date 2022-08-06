@@ -10,20 +10,23 @@
     integrity="sha256-auc32xxgmnEAKb9yBhbEuNAR/GcifPGJHLz+34/ZI2k="
     crossorigin="anonymous"
   />
-  <link
-    rel="stylesheet"
-    href="/waline-custom.css"
-  />
+  <link rel="stylesheet" href="/waline-custom.css" />
 </head>
 <body>
   <div id="waline" style="padding-top: 2rem"></div>
   <script>
+    const locale = {
+      placeholder: "加入讨论...（如果你在评论时留下邮箱，就能收到回复提醒！）",
+      login: "使用 GitHub 等方式登录",
+    };
+
     Waline.init({
       el: "#waline",
       avatar: "retro",
       serverURL: "https://blog-comment.pokon548.ink",
 
       emoji: ["https://cdn.jsdelivr.net/npm/@waline/emojis@1.0.1/tw-emoji"],
+      locale,
     });
   </script>
 </body>
