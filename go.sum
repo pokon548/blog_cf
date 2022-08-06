@@ -1,2 +1,8 @@
+github.com/davidsneighbour/hugo-debug v1.5.19 h1:ZuJmOfUT7xKe/H5oFsgVGXvKjrWntliIxHDb1f0lnlo=
+github.com/davidsneighbour/hugo-debug v1.5.19/go.mod h1:CmaePQn6TcdiP269YMmB0ShEZI47ySDpeWkBV8T2qcU=
+github.com/davidsneighbour/hugo-functions v1.1.2 h1:k+nqsfeF6/Z6yFZtnS+67utrF7jiTUA2bO3TfNIu4yo=
+github.com/davidsneighbour/hugo-functions v1.1.2/go.mod h1:vcxVzEHYhArEYMR0w+r6h6xwoV6Tkovl/d9fK2n3dQE=
+github.com/davidsneighbour/hugo-head v1.1.12 h1:QuF1Hic7IilyqHzYCRnvMoNH3rE3HWbpyttG5LHv+Qk=
+github.com/davidsneighbour/hugo-head v1.1.12/go.mod h1:1IFHPoWEu0VneqUKQc+aKSWkTu58sht83tYgMSHRIZA=
 github.com/davidsneighbour/hugo-robots v1.2.3 h1:m4YqvaM11swCXq09Q9YnZLQ0yu5arDq6wCQKXT6GXWc=
 github.com/davidsneighbour/hugo-robots v1.2.3/go.mod h1:q4YHx8ppcEtXa7bpCC0h+ml6lXCPsvemZrufl5XU+9U=

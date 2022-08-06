@@ -74,9 +74,9 @@ ignoreImports = false
   [languages.zh]
     languageName = "中文"
     title = "pokon548 的部落阁"
-    subtitle = "简单，随和的赛博自留地"
+    subtitle = "简单，随和的赛博自留地。包含技术、信息技术、娱乐、生活等内容。"
     owner = "pokon548"
-    keywords = ""
+    keywords = "技术 娱乐 生活 信息技术"
     copyright = "Copyright © 2016-2022 | pokon548"
     menuMore = "更多"
     readMore = "继续阅读"
