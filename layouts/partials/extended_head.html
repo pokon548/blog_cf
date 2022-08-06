@@ -52,17 +52,18 @@
 <meta name="msapplication-wide310x150logo" content="/mstile-310x150.png" />
 <meta name="msapplication-square310x310logo" content="/mstile-310x310.png" />
 
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/baguettebox.js@1.11.1/dist/baguetteBox.min.css"
-  integrity="sha256-cLMYWYYutHkt+KpNqjg7NVkYSQ+E2VbrXsEvOqU7mL0="
-  crossorigin="anonymous"
-/>
 <script
-  src="https://cdn.jsdelivr.net/npm/baguettebox.js@1.11.1/dist/baguetteBox.min.js"
-  integrity="sha256-ULQV01VS9LCI2ePpLsmka+W0mawFpEA0rtxnezUj4A4="
+  src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.31/dist/fancybox.umd.js"
+  integrity="sha256-0af2VbC4vmPsa8OLBAKBmLoyuKq4bBlKK2KOgMWayio="
   crossorigin="anonymous"
 ></script>
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.31/dist/fancybox.css"
+  integrity="sha256-7gMVmh7i2Xmo99mvvfnSn9dZfunTii7j4yPdmTAMUR0="
+  crossorigin="anonymous"
+/>
 
 <script
   async
@@ -72,10 +73,5 @@
 ></script>
 
 <script>
-  window.addEventListener("load", function () {
-    baguetteBox.run(".lightbox", {
-      async: false,
-      noScrollbars: true
-    });
-  });
+  Fancybox.bind('#waline-comment .vcontent img [data-fancybox]');
 </script>
