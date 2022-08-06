@@ -63,7 +63,6 @@ enableRobotsTXT = true
   priority = 0.5
 
 [module]
-
 [[module.imports]]
 path = "github.com/davidsneighbour/hugo-robots"
 disable = false
