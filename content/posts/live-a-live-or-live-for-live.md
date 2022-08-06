@@ -1,7 +1,6 @@
 +++
 title = "绝对不可错过的 RPG 神作：LIVE A LIVE"
 date = "2022-07-31T22:30:57+08:00"
-author = ""
 authorTwitter = "" #do not include @
 cover = "https://s1.ax1x.com/2022/07/31/vk8Xlj.png"
 tags = ["LIVE A LIVE", "游戏", "满分"]
