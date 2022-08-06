@@ -113,8 +113,8 @@ ignoreImports = false
     menuMore = "更多"
     readMore = "继续阅读"
     readOtherPosts = "阅读其他文章"
-    newerPosts = "Newer posts"
-    olderPosts = "Older posts"
+    newerPosts = "新文章"
+    olderPosts = "旧文章"
     missingContentMessage = "找不到文章..."
     missingBackButtonLabel = "回到首页"
 
