@@ -1,17 +1,17 @@
 +++
 title = "绕过限制，为 Supernote 安装第三方程序"
 date = "2022-08-06T13:12:14+08:00"
-cover = "https://s1.ax1x.com/2022/08/06/vuF5sP.jpg"
+cover = "https://share.pokon548.ink/api/name/banner3.230189d4.webp?path=/%F0%9F%97%BA%EF%B8%8F%20%E5%9B%BE%E5%BA%8A/banner3.230189d4.webp"
 tags = ["supernote", "sideload", "hack"]
 keywords = ["supernote", "sideload", "hack"]
-description = "把你的 Supernote 变成一个又能写字，又能轻办公的墨水屏平板，岂不是非常爽？当然，这里的操作有风险，请酌情食用 :)"
+description = "把你的 Supernote 变成一个又能写字，又能轻办公，岂不是非常爽？"
 +++
 
 > 事先提示：操作有风险。这么做可能会破坏 Supernote 的保修策略，也可能会导致你的 Supernote 无法正常使用。操作前请三思，确认自己是否有足够的动手能力。
 
 不过，能够点进这篇文章的人，应该都是拥有动手能力，而且知道自己在做什么的超级用户吧？那么，废话不多说，直接开始吧。
 
-## 原理
+# 原理
 - Supernote A5X / A6X 的固件基于安卓系统实现；
 - 可以在没有任何限制的情况下，直接使用 fastboot 解锁 Bootloader；
 - 解锁后的 fastboot 允许刷入任意镜像；
