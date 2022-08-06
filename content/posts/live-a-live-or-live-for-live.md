@@ -77,13 +77,13 @@ LIVE A LIVE 发售当周，即瞬间冲到 [Amazon 购买榜首](https://www.fam
 复古，但却处处充满着现代作品的精致感。
 > 以下截图均来自于 eshop 港区
 
-![vk8Xlj.png](https://s1.ax1x.com/2022/07/31/vktYu9.jpg)
+{{< image src="https://s1.ax1x.com/2022/07/31/vktYu9.jpg" alt="1" position="center" style="border-radius: 8px;" >}}
 
-![vktD3D.png](https://s1.ax1x.com/2022/07/31/vktD3D.jpg)
+{{< image src="https://s1.ax1x.com/2022/07/31/vktD3D.jpg" alt="2" position="center" style="border-radius: 8px;" >}}
 
-![vkt6ud.jpg](https://s1.ax1x.com/2022/07/31/vkt6ud.jpg)
+{{< image src="https://s1.ax1x.com/2022/07/31/vkt6ud.jpg" alt="3" position="center" style="border-radius: 8px;" >}}
 
-![vktgHI.jpg](https://s1.ax1x.com/2022/07/31/vktgHI.jpg)
+{{< image src="https://s1.ax1x.com/2022/07/31/vktgHI.jpg" alt="4" position="center" style="border-radius: 8px;" >}}
 
 像素的艺术，SQUARE ENIX 算是玩明白了。
 
