@@ -1,16 +1,27 @@
 <head>
-  <script src="https://cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js" integrity="sha256-PaeoVYXmU1wpc0Titp3E638KdQRu2ppPJus27ePxp9k=" crossorigin="anonymous"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@waline/client@2.6.2/dist/waline.js"
+    integrity="sha256-Pen0QbhdnjU2lr7byy5AQ7FBo9B6B7gfW/z/M8Qj70A="
+    crossorigin="anonymous"
+  ></script>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@waline/client@2.6.2/dist/waline.css"
+    integrity="sha256-auc32xxgmnEAKb9yBhbEuNAR/GcifPGJHLz+34/ZI2k="
+    crossorigin="anonymous"
+  />
 </head>
 <body>
-  <div id="vcomments" style="padding-top: 4rem;"></div>
+  <div id="waline" style="padding-top: 4rem"></div>
   <script>
-      new Valine({
-          el: '#vcomments',
-          appId: '5NERYXkQTWVp5yJE2FM0nQ1i-MdYXbMMI',
-          appKey: 'zy5BwyvSkpgiNjFwKYfbixSs',
-          serverURLs: 'https://5neryxkq.api.lncldglobal.com',
-          avatar: 'retro',
-          visitor: true
-      })
+    Waline.init({
+      el: "#waline",
+      dark: true,
+      serverURL: "https://blog-comment.pokon548.ink",
+
+      emoji: [
+        "https://cdn.jsdelivr.net/npm/@waline/emojis@1.0.1/tw-emoji"
+      ],
+    });
   </script>
 </body>
