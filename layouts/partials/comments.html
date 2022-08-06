@@ -10,19 +10,20 @@
     integrity="sha256-auc32xxgmnEAKb9yBhbEuNAR/GcifPGJHLz+34/ZI2k="
     crossorigin="anonymous"
   />
+  <link
+    rel="stylesheet"
+    href="/waline-custom.css"
+  />
 </head>
 <body>
   <div id="waline" style="padding-top: 4rem"></div>
   <script>
     Waline.init({
       el: "#waline",
-      dark: true,
-      avatar: 'retro',
+      avatar: "retro",
       serverURL: "https://blog-comment.pokon548.ink",
 
-      emoji: [
-        "https://cdn.jsdelivr.net/npm/@waline/emojis@1.0.1/tw-emoji"
-      ],
+      emoji: ["https://cdn.jsdelivr.net/npm/@waline/emojis@1.0.1/tw-emoji"],
     });
   </script>
 </body>
