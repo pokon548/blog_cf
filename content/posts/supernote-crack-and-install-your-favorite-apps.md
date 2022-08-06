@@ -4,7 +4,7 @@ date = "2022-08-06T13:12:14+08:00"
 cover = "https://s1.ax1x.com/2022/08/06/vuF5sP.jpg"
 tags = ["supernote", "sideload", "hack"]
 keywords = ["supernote", "sideload", "hack"]
-description = "把你的 Supernote 变成一个又能写字，又能轻办公，岂不是非常爽？"
+description = "把你的 Supernote 变成一个又能写字，又能轻办公的墨水篇屏平板，岂不是非常爽？"
 +++
 
 > 事先提示：操作有风险。这么做可能会破坏 Supernote 的保修策略，也可能会导致你的 Supernote 无法正常使用。操作前请三思，确认自己是否有足够的动手能力。
