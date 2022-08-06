@@ -52,4 +52,4 @@ description = "在一年多左右的劳顿和沉淀后，博客终于重新开�
 
 登录评论系统，以便于同步你的社交信息。当然，不登录也是可以的 :)
 
-[^2]: https://waline.js.org/advanced/why.html
+[^2]: https://ttys3.dev/post/please-stop-using-valine-js-comment-system-until-it-fixed-the-privacy-leaking-problem/
