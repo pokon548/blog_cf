@@ -3,7 +3,7 @@ title = "从零开始的 Android Inline Hook —— 搭建开发环境"
 date = "2022-08-14T16:15:15+08:00"
 author = ""
 authorTwitter = "" #do not include @
-cover = ""
+cover = "https://s1.ax1x.com/2022/08/14/vU4Y3n.jpg"
 tags = ["Android", "Magisk", "Inline Hook"]
 keywords = ["Android", "Magisk", "Inline Hook"]
 description = "如何从白手起家，到开始使用 Inline Hook？"
@@ -31,7 +31,7 @@ hideComments = false
 ## 克隆 Magisk 仓库
 > 下文假定你已经在 Emulator 里成功下载了相应的系统镜像，并拥有如何正确使用 Emulator 的经验。
 
-Android Studio 内置的镜像自然是不包含 Magisk 的。我们需要使用 Magisk 项目自带的一个脚本，创建修改后的 ```system.img```。
+Android Studio 内置的镜像自然是不包含 Magisk 的。我们需要使用 Magisk 项目自带的一个脚本，创建修改后的 ```ramdisk.img```。
 
 使用下面的指令克隆 Magisk 仓库：
 ```shell
