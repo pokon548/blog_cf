@@ -19,7 +19,7 @@ hideComments = false
 ## 技术栈
 - Magisk，作为注入 Zygote 的底层框架；
 - Zygisk，作为劫持 Zygote 的实际作用部分；
-- Dobby，用来实现指令精度级的 Inline Hook。
+- [Dobby](https://github.com/jmpews/Dobby)，用来实现指令精度级的 Inline Hook。
 
 ## 开发环境
 我使用的是 Android Studio 内含的 Emulator。从 Android 11 开始，x86_64 的镜像内含一个 ARM 指令转译模块 [^1]。在非必要的情况下，不必再使用 ARM 镜像开发应用（转译性能较低）。
