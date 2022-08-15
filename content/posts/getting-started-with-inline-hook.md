@@ -24,9 +24,8 @@ hideComments = false
 ## 开发环境
 我使用的是 Android Studio 内含的 Emulator。从 Android 11 开始，x86_64 的镜像内含一个 ARM 指令转译模块 [^1]。在非必要的情况下，不必再使用 ARM 镜像开发应用（转译性能较低）。
 
-如果你是 Windows 用户，也可以考虑使用 [MagiskOnWSA](https://github.com/LSPosed/MagiskOnWSA) 项目，将 WSA 变成一个完美的 Magisk 开发环境。
+如果你是 Windows 用户，也可以考虑使用 [MagiskOnWSALocal](https://github.com/LSPosed/MagiskOnWSALocal) 项目，将 WSA 变成一个完美的 Magisk 开发环境。
 
-> 提示：最近 GitHub 已经将这个项目禁用了。原因未知。[![vUWCnS.png](https://s1.ax1x.com/2022/08/14/vUWCnS.png)](https://imgtu.com/i/vUWCnS)
 
 ## 克隆 Magisk 仓库
 > 下文假定你已经在 Emulator 里成功下载了相应的系统镜像，并拥有如何正确使用 Emulator 的经验。
