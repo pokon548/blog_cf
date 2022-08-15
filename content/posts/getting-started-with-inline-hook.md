@@ -44,7 +44,7 @@ git clone --recurse-submodules -j8 https://github.com/topjohnwu/Magisk.git
 
 或者，如果不想因此而修改环境，你可以用一个取巧的方法：
 ```shell
-ANDROID_SDK_ROOT=/to/sdk/root/directory proxychains python3 build.py <your_command>
+ANDROID_SDK_ROOT=/to/sdk/root/directory python3 build.py <your_command>
 ```
 
 克隆完成后，需要在 Magisk 根目录运行下面的指令，以初始化 Magisk 所需的 NDK 模块：
