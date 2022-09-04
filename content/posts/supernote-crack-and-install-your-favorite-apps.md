@@ -114,6 +114,8 @@ fastboot flash boot magisk_patched_*******.img
 
 ### 拓展阅读
 - [Hacking and rooting the Ratta Supernote A5 X (and probably A6 X)](https://github.com/TA1312/supernote-a5x)[^9]
+
+
 [^1]: 神奇的是，Supernote 在执行完这个命令后，不会依照 Google 的标准执行恢复出厂设置的操作。也算是个好事，避免了备份和还原数据的麻烦
 [^2]: 如果直接在终端里输入 ```vi``` 并按下回车的话，你会惊奇的发现没有这个指令。试试看在指令的前面加一个 ```toybox```，你会回来感谢我的 :)
 [^3]: Chauvet 基于 Android 8.1 定制而来
