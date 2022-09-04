@@ -112,6 +112,8 @@ fastboot flash boot magisk_patched_*******.img
 - VPN。确认连接的对话框被删除了，因此你无法授权任何 VPN 连接[^8]；
 - 需要 Google 框架的应用。因为许可原因，Supernote 没有内置 GApps，自然也就无法使用依赖于谷歌框架的应用。
 
+### 拓展阅读
+- [Hacking and rooting the Ratta Supernote A5 X (and probably A6 X)](https://github.com/TA1312/supernote-a5x)[^9]
 [^1]: 神奇的是，Supernote 在执行完这个命令后，不会依照 Google 的标准执行恢复出厂设置的操作。也算是个好事，避免了备份和还原数据的麻烦
 [^2]: 如果直接在终端里输入 ```vi``` 并按下回车的话，你会惊奇的发现没有这个指令。试试看在指令的前面加一个 ```toybox```，你会回来感谢我的 :)
 [^3]: Chauvet 基于 Android 8.1 定制而来
@@ -120,3 +122,4 @@ fastboot flash boot magisk_patched_*******.img
 [^6]: Supernote 侧边栏的分页功能做的似乎不怎么好用。大量的应用会产生导航困难
 [^7]: 神奇的是，内置的 Android System Webview 又是可以正常使用的（基于 Chromium）。当然，或许你会尝试升级它。我的建议是：放弃，因为一样会闪退，而且会把 Supernote 里面的一些程序给弄崩
 [^8]: 但是 VPN 本身似乎是可以用的，只是无法创建新连接而已。不知道有没有什么可以绕过的手段
+[^9]: 虽然看起来本文章是从这里借鉴过来的，但这只是个巧合 :)
