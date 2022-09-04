@@ -66,7 +66,7 @@ cmake --build [<dir> | --preset <preset>]
 
 告诉 CMake 构建 --build 后的文件夹。
 
-### 食用例子
+## 食用例子
 假设我们要编译一个经典的 hello world 类程序：
 ```c
 #include <stdio.h>
