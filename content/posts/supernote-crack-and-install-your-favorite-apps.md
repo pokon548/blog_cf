@@ -13,19 +13,11 @@ description = "把你的 Supernote 变成一个又能写字，又能轻办公的
 
 # 原理
 - Supernote A5X / A6X 的固件基于安卓系统实现；
-- 可以在没有任何限制的情况下，直接使用 fastboot 解锁 Bootloader；
-- 解锁后的 fastboot 允许刷入任意镜像；
+- 可以在没有任何限制的情况下，直接使用已经解锁的 fastboot；
 - 内置的 Recovery 允许 adb shell 直接拿到 root 权限。借此可远程提取并修改 Supernote 里的任意文件。
 
 ## 操作步骤
 以下步骤并不复杂，但是需要你有一定的 Android 刷机经验。
-
-### 解锁 Bootloader
-首先，你需要有一份来自高通的 ```fastboot``` 程序。随后，将你的 Supernote 连接到电脑上，输入 ```adb reboot fastboot```。
-
-Supernote 会自动重启到 fastboot 模式。不过，墨水屏还会保持着重启前的画面，看起来就像没有反应似的。不过，Supernote 右上角呼吸灯的位置会亮红灯，表明已经执行了相应的操作。
-
-之后，再输入 ```fastboot oem unlock```，即可执行解锁操作。不需要在 Supernote 侧做任何确认[^1]。解锁完成后，Supernote 不会自动重启，手动按电源键重启一下即可。
 
 ### 开启 ADB 侧载应用权限
 即使是已经解锁，你也暂时无法使用 ```adb install xxx.apk``` 安装你喜欢的东西。如果现在就尝试的话，会得到 ```command not supported``` 的提示。
@@ -38,7 +30,7 @@ adb shell
 你就成功的在电脑终端里拿到了一个带 root 的 shell。神奇吧！
 
 如果你熟悉 ```vi``` 的话，其实就不用继续看下面的步骤了。只需要[^2]：
-1. 打开系统分区里的 ```build.prop```；
+1. 打开系统分区里的 ```prop.default```；
 2. 将 ```ro.secure=1``` 修改为 ```ro.secure=0```；
 3. 将 ```ro.debuggable=0``` 修改为 ```ro.debuggable=1```。
 
@@ -50,7 +42,7 @@ adb shell
 
 要这么做，需要输入这个指令：
 ```
-adb pull /system/build.prop .
+adb pull /system/etc/prop.default .
 ```
 你就会在当前目录下拿到一份配置文件的副本。用你任意喜欢的文本编辑器打开它，找到并替换以下几项：
 - ```ro.secure=1``` 修改为 ```ro.secure=0```；
@@ -60,7 +52,7 @@ adb pull /system/build.prop .
 
 之后，我们用 ```adb push``` 指令把这个修改了的文件推回去：
 ```
-adb push build.prop /system
+adb push build.prop /system/etc
 ```
 
 完成后，输入 ```adb reboot``` 回到系统。此时，你就可以安装任意想要的程序了！
