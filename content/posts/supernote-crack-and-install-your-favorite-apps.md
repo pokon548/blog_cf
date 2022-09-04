@@ -52,7 +52,7 @@ adb pull /system/etc/prop.default .
 
 之后，我们用 ```adb push``` 指令把这个修改了的文件推回去：
 ```
-adb push build.prop /system/etc
+adb push prop.default /system/etc
 ```
 
 完成后，输入 ```adb reboot``` 回到系统。此时，你就可以安装任意想要的程序了！
