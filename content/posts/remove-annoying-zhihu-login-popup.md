@@ -33,7 +33,7 @@ zhihu.com#%#document.addEventListener = (event,listener,useCapture)=>{event!="DO
 ~~花费五分钟，写好了弹窗屏蔽规则，实验成功。~~
 
 为了实现完美的效果，故逆向了一下知乎的前端 JS，针对性写了一段脚本来处理这个麻烦的弹出框[^1]。至于原理，简单来说：
-1. 劫持浏览器的 ``window.addEventListsner`` 函数，并替换为自定义的版本；
+1. 劫持浏览器的 ``window.addEventListener`` 函数，并替换为自定义的版本；
 2. 在自定义的处理函数中，判断 ``listener`` 中的函数是否用于加载登录弹窗。如果是，则拒绝将其添加到浏览器事件中。
 
 ## 不足
