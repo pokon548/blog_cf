@@ -17,7 +17,7 @@ hideComments = false
 ```html
 ! 屏蔽滚动页面时右下角弹出的刘看山登录提示框
 zhihu.com#%#originalEvent = document.addEventListener
-zhihu.com#%#document.addEventListener = (event, listener, useCapture) => {event!="DOMContentLoaded"?originalEvent(event, listener, useCapture):listener.toString().length<1000?originalEvent(event, listener, useCapture):originalEvent(event, function e(){originalScroll=window.addEventListener;window.addEventListener=(event, listener, useCapture)=>{event!="scroll"?originalScroll(event, listener, useCapture):listener.toString().length==177?null:originalScroll(event, listener, useCapture)};listener();}, useCapture)}
+zhihu.com#%#document.addEventListener = (event,listener,useCapture)=>{event!="DOMContentLoaded"?originalEvent(event,listener,useCapture):listener.toString().length<1000?originalEvent(event,listener,useCapture):originalEvent(event,function e(){originalScroll=window.addEventListener;window.addEventListener=(event,listener,useCapture)=>{event!="scroll"?originalScroll(event,listener,useCapture):listener.toString().length==177?null:originalScroll(event,listener,useCapture)};listener()},useCapture)}
 ```
 
 ## 探究过程
@@ -31,7 +31,10 @@ zhihu.com#%#document.addEventListener = (event, listener, useCapture) => {event!
 虽然你的 CSS 类名是随机的，但是你的 ``style`` 是固定不变的。那我直接按照你类的 ``style`` 特征屏蔽不就好了吗？
 
 ~~花费五分钟，写好了弹窗屏蔽规则，实验成功。~~
-为了实现完美的效果，故逆向了一下知乎的前端 JS，针对性写了一段脚本来处理这个麻烦的弹出框。
+
+为了实现完美的效果，故逆向了一下知乎的前端 JS，针对性写了一段脚本来处理这个麻烦的弹出框。至于原理，简单来说：
+1. 劫持浏览器的 ``window.addEventListsner`` 函数，并替换为自定义的版本；
+2. 在自定义的处理函数中，判断 ``listener`` 中的函数是否用于加载登录弹窗。如果是，则拒绝将其添加到浏览器事件中。
 
 ## 不足
 > 最新的过滤规则规避了以下两个问题
