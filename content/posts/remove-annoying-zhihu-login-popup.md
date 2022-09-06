@@ -16,7 +16,7 @@ hideComments = false
 将以下过滤规则加入到你的广告过滤器里：
 ```html
 ! 屏蔽滚动页面时右下角弹出的刘看山登录提示框
-zhihu.com##div:last-child > div > div[style="transform-origin: center bottom; margin-top: -8px; opacity: 1; transform: none;"]
+zhihu.com##div[style="transform-origin: center bottom; margin-top: -8px; opacity: 1; transform: none;"]
 
 ! 下面几个规则会一并把登录入口干掉。介意请勿添加。每次点一个页面都弹出登录 model 真是太烦人了...
 zhihu.com##div[class="ColumnPageHeader-profile"]
