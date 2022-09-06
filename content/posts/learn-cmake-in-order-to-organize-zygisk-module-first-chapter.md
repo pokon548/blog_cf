@@ -1,5 +1,5 @@
 +++
-title = "从零开始的 Android Inline Hook —— CMake 学习（1）"
+title = "从零开始的 Android Inline Hook —— CMake 学习"
 date = "2022-09-04T16:02:57+08:00"
 author = ""
 authorTwitter = "" #do not include @
@@ -66,7 +66,7 @@ cmake --build [<dir> | --preset <preset>]
 
 告诉 CMake 构建 --build 后的文件夹。
 
-## 食用例子
+### 食用例子
 假设我们要编译一个经典的 hello world 类程序：
 ```c
 #include <stdio.h>
@@ -178,6 +178,66 @@ cmake --build build
 ```
 Hello, CMake!
 ```
+## CMake 核心语法
+### 注释
+```cmake
+# 单行注释
+#[[
+这里是
+多行注释
+]]
+```
+### 变量
+```cmake
+# 设置单纯的变量
+set(VARIABLE value)
+set(VARIABLE "value")
+set(VARIABLE value\ With\ Space)
+
+# 列表
+set(ARRAY, element1, element2)  # "element1,element2"
+set(ARRAY, element1;element2)
+set(ARRAY, "element1,element2")
+
+# 数字
+set(NUMBER, 14)
+
+# 布尔
+set(BOOL, ON)
+
+# 取消某个变量
+unset(VARIABLE)
+```
+
+如需引用，则输入 ``${<variable>}``。
+
+### Cache 变量
+主要用于提供用户配置选项。
+```cmake
+# set(<variable> <value>... CACHE <type> <docstring> [FORCE])
+set(CACHE_VAR "Default cache value" CACHE STRING "A sample for cache variable")
+```
+引用 CACHE 变量：``$CACHE{<varialbe>}``。
+
+### 环境变量
+```cmake
+# set(ENV{<variable>} [<value>])
+set(ENV{ENV_VAR} "$ENV{PATH}")
+message("Value of ENV_VAR: $ENV{ENV_VAR}")
+```
+
+### 条件语句
+1. 字符串比较：STREQUAL、STRLESS、STRGREATER 等；
+2. 数值比较：EQUAL、LESS、GREATER 等；
+3. 布尔运算：AND、OR、NOT；
+4. 路径判断：EXISTS、IS_DIRECTORY、IS_ABSOLUTE 等；
+5. 条件组合：(cond1) AND (cond2 OR (cond3))。
+
+对于常量：
+- ON、YES、TRUE、Y 和非 0 值均被视为 True；
+- 0、OFF、NO、FALSE、N、IGNORE、空字符串、NOTFOUND、及以 "-NOTFOUND" 结尾的字符串均视为 False。
+- 对于变量，只要其值不是常量中为 False 的情形，则均视为 True。
+
 
 [^1]: cmake 也可使用其它的程序执行构建过程。在这里我则使用 make 执行底层的构建操作。
 [^2]: 下面的参数都是带有两个 - 的。不过，貌似博客会将两个 - 转译为别的东西 :(
