@@ -18,8 +18,10 @@ hideComments = false
 ! 屏蔽滚动页面时右下角弹出的刘看山登录提示框
 zhihu.com##div:last-child > div > div[style="transform-origin: center bottom; margin-top: -8px; opacity: 1; transform: none;"]
 
-! 下面两个规则会一并把登录入口干掉。介意请勿添加。每次点一个页面都弹出登录 model 真是太烦人了...
+! 下面几个规则会一并把登录入口干掉。介意请勿添加。每次点一个页面都弹出登录 model 真是太烦人了...
 zhihu.com##div[class="ColumnPageHeader-profile"]
+zhihu.com##div[class="AppHeader-profile"]
+zhihu.com##div[class="QuestionHeader-profile"]
 zhihu.com##div[style^="margin-top: 16px; position: fixed; opacity: 1; transform: translateY"]
 ```
 
