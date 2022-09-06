@@ -19,7 +19,7 @@ hideComments = false
 zhihu.com#%#originalEvent = document.addEventListener
 zhihu.com#%#document.addEventListener = (event, listener, useCapture) => {event!="DOMContentLoaded"?originalEvent(event, listener, useCapture):listener.toString().length<1000?originalEvent(event, listener, useCapture):originalEvent(event, function e(){originalScroll=window.addEventListener;window.addEventListener=(event, listener, useCapture)=>{event!="scroll"?originalScroll(event, listener, useCapture):listener.toString().length==177?null:originalScroll(event, listener, useCapture)};listener();}, useCapture)}
 ```
-zhihu.com#%#window.removeEventListener("scroll", getEventListeners(window)["scroll"][1].listener)
+
 ## 探究过程
 知乎最新的模态提示框不再是以前单独的 ``signflow.js`` 请求，可以简单的屏蔽对应 JS 的请求解决。通过反查刘看山模态提示框的图片资源请求，发现这部分登录逻辑与主网站的 js 绑定在一起，简单的屏蔽资源会导致网站无法正常使用。
 
