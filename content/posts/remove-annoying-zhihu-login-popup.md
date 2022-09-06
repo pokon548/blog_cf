@@ -28,7 +28,7 @@ zhihu.com#%#document.addEventListener = (event,listener,useCapture)=>{event!="DO
 ## 但是...
 谁说广告屏蔽器只能按 CSS 类名屏蔽的？
 
-虽然你的 CSS 类名是随机的，但是你的 ``style`` 是固定不变的。那我直接按照你类的 ``style`` 特征屏蔽不就好了吗？
+~~虽然你的 CSS 类名是随机的，但是你的 ``style`` 是固定不变的。那我直接按照你类的 ``style`` 特征屏蔽不就好了吗？~~
 
 ~~花费五分钟，写好了弹窗屏蔽规则，实验成功。~~
 
