@@ -33,7 +33,7 @@ hideComments = false
 Android Studio 内置的镜像自然是不包含 Magisk 的。我们需要使用 Magisk 项目自带的一个脚本，创建修改后的 ```ramdisk.img```。
 
 使用下面的指令克隆 Magisk 仓库：
-```shell
+```shell-session
 git clone --recurse-submodules -j8 https://github.com/topjohnwu/Magisk.git
 ```
 
@@ -43,12 +43,12 @@ git clone --recurse-submodules -j8 https://github.com/topjohnwu/Magisk.git
 克隆完成后，先在环境变量里设定 ``ANDROID_SDK_ROOT``，用于让 Magisk 相应脚本找到需要的依赖项目。
 
 或者，如果不想因此而修改环境，你可以用一个取巧的方法：
-```shell
+```shell-session
 ANDROID_SDK_ROOT=/to/sdk/root/directory python3 build.py <your_command>
 ```
 
 克隆完成后，需要在 Magisk 根目录运行下面的指令，以初始化 Magisk 所需的 NDK 模块：
-```shell
+```shell-session
 ./build.py ndk
 ```
 
@@ -56,14 +56,14 @@ ANDROID_SDK_ROOT=/to/sdk/root/directory python3 build.py <your_command>
 
 ## 植入 Magisk
 运行下面的指令：
-```shell
+```shell-session
 ./build.py emulator
 ```
 
 你就能够获得一个一次性的 Magisk 开发环境。重启后环境会消失。
 
 可能你不会想要这个命令，而是下面这个直接 patch ramdisk 的指令：
-```shell
+```shell-session
 ./build.py avd_patch /path/to/ramdisk.img
 ```
 
