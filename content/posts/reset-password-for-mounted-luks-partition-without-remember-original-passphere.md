@@ -6,7 +6,7 @@ authorTwitter = "" #do not include @
 cover = ""
 tags = ["luks", "encrypt", "recovery"]
 keywords = ["luks", "encrypt", "recovery"]
-description = "手贱加密了一个分区，刚挂载完分区，拷贝完重要文件，却唯独忘了记下加密分区的密钥？首先，千万不要卸载已经挂上的加密分区，或是重启计算机！深吸一口气，并继续阅读这篇文章（恢复很容易！）"
+description = "刚刚加密了一个分区，挂载完分区，拷贝完重要文件，却唯独忘了记下加密分区的密钥？首先，千万不要卸载已经挂上的加密分区，或是重启计算机！深吸一口气，并继续阅读这篇文章（恢复很容易！）"
 readingTime = false
 hideComments = false
 +++
