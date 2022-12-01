@@ -1,1 +1,7 @@
-<img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy" style="cursor:zoom-in" data-fancybox/>
+<img
+  src="{{ .Destination | safeURL }}"
+  alt="{{ .Text }}"
+  loading="lazy"
+  style="max-height: 500px; display: block; margin: auto; cursor: zoom-in"
+  data-fancybox
+/>
