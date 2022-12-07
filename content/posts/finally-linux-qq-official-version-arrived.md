@@ -28,4 +28,7 @@ Linux 版 QQ 终于正式公测了！用 wine 模拟 QQ 的苦日子终于快要
 ![Screenshot_20221207_103014.png](https://s2.loli.net/2022/12/07/iadsmFely6z9UR7.png)
 
 ## 后续评测
-先占坑，等后续测试之后，我会在这里进一步分享我的
+先占坑，等后续测试之后，我会在这里进一步分享使用心得 :)
+
+## NixOS & 公测权限用户？
+欢迎使用我的 [NixOS](https://github.com/pokon548/nur-packages/blob/master/pkgs/tencent-qq-electron/default.nix) 打包！
