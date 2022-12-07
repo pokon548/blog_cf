@@ -27,8 +27,11 @@ Linux 版 QQ 终于正式公测了！用 wine 模拟 QQ 的苦日子终于快要
 
 ![Screenshot_20221207_103014.png](https://s2.loli.net/2022/12/07/iadsmFely6z9UR7.png)
 
-## 后续评测
-先占坑，等后续测试之后，我会在这里进一步分享使用心得 :)
+## 已知问题
+- 目前只能用扫码登录；
+- 目前版本有白名单机制，因此只有群内用户可以登录使用；
+- 目前不支持视频通话；
+- 似乎没有远程桌面功能。
 
 ## NixOS & 公测权限用户？
 欢迎使用我的 [NixOS](https://github.com/pokon548/nur-packages/blob/master/pkgs/tencent-qq-electron/default.nix) 打包！
