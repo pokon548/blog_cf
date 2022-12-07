@@ -1,11 +1,11 @@
 +++
 title = "腾讯终于推出了官方的 Linux 版 QQ"
 date = "2022-12-07T10:14:40+08:00"
-author = "pokon548"
+author = ""
 authorTwitter = "" #do not include @
 cover = "https://s2.loli.net/2022/12/07/yQ8SmicPYxTJbXr.png"
-tags = ["qq", "linux"]
-keywords = ["qq", "linux"]
+tags = ["qq", "linux", "有生之年"]
+keywords = ["qq", "linux", "有生之年"]
 description = "腾讯居然再次推出了官方版本的 Linux QQ？？"
 showFullContent = false
 readingTime = false
@@ -23,6 +23,7 @@ Linux 版 QQ 终于正式公测了！用 wine 模拟 QQ 的苦日子终于快要
 > 该版本依然需要扫码登陆。请准备好你的手机
 
 ![Screenshot_20221207_102554.png](https://s2.loli.net/2022/12/07/eU7t9kLrZHI2hTu.png)
+
 ![Screenshot_20221207_103014.png](https://s2.loli.net/2022/12/07/iadsmFely6z9UR7.png)
 
 ## 后续评测
