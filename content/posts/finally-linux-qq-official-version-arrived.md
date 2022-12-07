@@ -13,6 +13,7 @@ hideComments = false
 +++
 
 终于，我们等到了一个令人振奋的好消息：
+
 ![Screenshot_20221207_102134.png](https://s2.loli.net/2022/12/07/yQ8SmicPYxTJbXr.png)
 
 Linux 版 QQ 终于正式公测了！用 wine 模拟 QQ 的苦日子终于快要结束了。
