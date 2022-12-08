@@ -34,7 +34,12 @@ Linux 版 QQ 终于正式公测了！用 wine 模拟 QQ 的苦日子终于快要
 - 似乎没有远程桌面功能；
 - 没有托盘。关闭按钮的实际作用是最小化。如果你彻底关闭了它，需要重新扫码登陆；
 - QQ 空间似乎只能评论、点赞以及转发，不能发动态；
+- 自带的截图功能，在多屏幕下的预览有问题；
 - 下面那个邮箱按钮似乎是摆设——它只会打开一个网页版的 QQ 邮箱。Emm
 
 ## NixOS & 公测权限用户？
-欢迎使用我的 [NixOS](https://github.com/pokon548/nur-packages/blob/master/pkgs/tencent-qq-electron/default.nix) 打包！
+欢迎使用我的：
+- [纯打包版](https://github.com/pokon548/nur-packages/blob/master/pkgs/tencent-qq-electron/default.nix)
+- [Bwrap 安全版](https://github.com/pokon548/nur-packages/blob/master/pkgs/tencent-qq-electron-bwrap/default.nix)
+
+打包！
