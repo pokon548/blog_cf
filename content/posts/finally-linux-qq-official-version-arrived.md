@@ -39,7 +39,7 @@ Linux 版 QQ 终于正式公测了！用 wine 模拟 QQ 的苦日子终于快要
 
 ## NixOS & 公测权限用户？
 欢迎使用我的：
-- [纯打包版](https://github.com/pokon548/nur-packages/blob/master/pkgs/tencent-qq-electron/default.nix)
+- [普通版](https://github.com/pokon548/nur-packages/blob/master/pkgs/tencent-qq-electron/default.nix)
 - [Bwrap 安全版](https://github.com/pokon548/nur-packages/blob/master/pkgs/tencent-qq-electron-bwrap/default.nix)
 
 打包！
