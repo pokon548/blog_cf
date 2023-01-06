@@ -6,61 +6,61 @@ paginate = 5
 enableRobotsTXT = true
 
 [params]
-  # dir name of your main content (default is `content/posts`).
-  # the list of set content will show up on your index page (baseurl).
-  contentTypeName = "posts"
+# dir name of your main content (default is `content/posts`).
+# the list of set content will show up on your index page (baseurl).
+contentTypeName = "posts"
 
-  # ["orange", "blue", "red", "green", "pink"]
-  themeColor = "blue"
+# ["orange", "blue", "red", "green", "pink"]
+themeColor = "blue"
 
-  # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 5
+# if you set this to 0, only submenu trigger will be visible
+showMenuItems = 5
 
-  # show selector to switch language
-  showLanguageSelector = false
+# show selector to switch language
+showLanguageSelector = false
 
-  # set theme to full screen width
-  fullWidthTheme = false
+# set theme to full screen width
+fullWidthTheme = false
 
-  # center theme with default width
-  centerTheme = false
+# center theme with default width
+centerTheme = false
 
-  # if your resource directory contains an image called `cover.(jpg|png|webp)`,
-  # then the file will be used as a cover automatically.
-  # With this option you don't have to put the `cover` param in a front-matter.
-  autoCover = true
+# if your resource directory contains an image called `cover.(jpg|png|webp)`,
+# then the file will be used as a cover automatically.
+# With this option you don't have to put the `cover` param in a front-matter.
+autoCover = true
 
-  # set post to show the last updated
-  # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
-  #showLastUpdated = true
+# set post to show the last updated
+# If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
+#showLastUpdated = true
 
-  # set a custom favicon (default is a `themeColor` square)
-  favicon = "favicon.ico"
+# set a custom favicon (default is a `themeColor` square)
+favicon = "favicon.ico"
 
-  # Provide a string as a prefix for the last update date. By default, it looks like this: 2020-xx-xx [Updated: 2020-xx-xx] :: Author
-  # updatedDatePrefix = "Updated"
+# Provide a string as a prefix for the last update date. By default, it looks like this: 2020-xx-xx [Updated: 2020-xx-xx] :: Author
+# updatedDatePrefix = "Updated"
 
-  # set all headings to their default size (depending on browser settings)
-  # oneHeadingSize = true # default
+# set all headings to their default size (depending on browser settings)
+# oneHeadingSize = true # default
 
-  # whether to show a page's estimated reading time
-  #readingTime = true
+# whether to show a page's estimated reading time
+#readingTime = true
 
-  # whether to show a table of contents
-  # can be overridden in a page's front-matter
-  Toc = true
+# whether to show a table of contents
+# can be overridden in a page's front-matter
+Toc = true
 
-  # set title for the table of contents
-  # can be overridden in a page's front-matter
-  TocTitle = "目录" # default
+# set title for the table of contents
+# can be overridden in a page's front-matter
+TocTitle = "目录" # default
 
 [permalinks]
-  posts = '/:year/:month/:day/:title/'
+posts = '/:year/:month/:day/:title/'
 
 [sitemap]
-  changefreq = 'daily'
-  filename = 'sitemap.xml'
-  priority = 0.8
+changefreq = 'daily'
+filename = 'sitemap.xml'
+priority = 0.8
 
 [module]
 [[module.imports]]
@@ -69,77 +69,79 @@ disable = false
 ignoreConfig = false
 ignoreImports = false
 
+[[module.imports]]
+path = 'github.com/panr/hugo-theme-terminal/v3'
 [minify]
-  disableCSS = false
-  disableHTML = false
-  disableJS = false
-  disableJSON = false
-  disableSVG = false
-  disableXML = false
-  minifyOutput = true
-  [minify.tdewolff]
-    [minify.tdewolff.css]
-      keepCSS2 = true
-      precision = 0
-    [minify.tdewolff.html]
-      keepComments = false
-      keepConditionalComments = true
-      keepDefaultAttrVals = true
-      keepDocumentTags = true
-      keepEndTags = true
-      keepQuotes = true
-      keepWhitespace = false
-    [minify.tdewolff.js]
-      keepVarNames = false
-      noNullishOperator = false
-      precision = 0
-    [minify.tdewolff.json]
-      keepNumbers = false
-      precision = 0
-    [minify.tdewolff.svg]
-      keepComments = false
-      precision = 0
-    [minify.tdewolff.xml]
-      keepWhitespace = false
+disableCSS = false
+disableHTML = false
+disableJS = false
+disableJSON = false
+disableSVG = false
+disableXML = false
+minifyOutput = true
+[minify.tdewolff]
+[minify.tdewolff.css]
+keepCSS2 = true
+precision = 0
+[minify.tdewolff.html]
+keepComments = false
+keepConditionalComments = true
+keepDefaultAttrVals = true
+keepDocumentTags = true
+keepEndTags = true
+keepQuotes = true
+keepWhitespace = false
+[minify.tdewolff.js]
+keepVarNames = false
+noNullishOperator = false
+precision = 0
+[minify.tdewolff.json]
+keepNumbers = false
+precision = 0
+[minify.tdewolff.svg]
+keepComments = false
+precision = 0
+[minify.tdewolff.xml]
+keepWhitespace = false
 
 [languages]
-  [languages.zh]
-    languageName = "中文"
-    title = "pokon548 的部落阁"
-    subtitle = "简单，随和的赛博自留地。包含技术、信息技术、娱乐、生活等内容。"
-    owner = "pokon548"
-    keywords = "技术 娱乐 生活 信息技术"
-    copyright = "Copyright © 2016-2022 | pokon548"
-    menuMore = "更多"
-    readMore = "继续阅读"
-    readOtherPosts = "阅读其他文章"
-    newerPosts = "新文章"
-    olderPosts = "旧文章"
-    missingContentMessage = "找不到文章..."
-    missingBackButtonLabel = "回到首页"
+[languages.zh]
+languageName = "中文"
+title = "pokon548 的部落阁"
+subtitle = "简单，随和的赛博自留地。包含技术、信息技术、娱乐、生活等内容。"
+owner = "pokon548"
+keywords = "技术 娱乐 生活 信息技术"
+copyright = "Copyright © 2016-2022 | pokon548"
+menuMore = "更多"
+readMore = "继续阅读"
+readOtherPosts = "阅读其他文章"
+newerPosts = "新文章"
+olderPosts = "旧文章"
+missingContentMessage = "找不到文章..."
+missingBackButtonLabel = "回到首页"
 
-    [languages.zh.params.logo]
-      logoText = "pokon548@blog"
-      logoHomeLink = "/"
+[languages.zh.params.logo]
+logoText = "pokon548@blog"
+logoHomeLink = "/"
 
-    [languages.zh.menu]
-      [[languages.zh.menu.main]]
-        identifier = "posts"
-        name = "文章"
-        url = "/"
-        weight = 1
-      [[languages.zh.menu.main]]
-        identifier = "project"
-        name = "项目"
-        url = "/project"
-        weight = 2
-      [[languages.zh.menu.main]]
-        identifier = "hobby"
-        name = "爱好"
-        url = "/hobby"
-        weight = 3
-      [[languages.zh.menu.main]]
-        identifier = "about"
-        name = "关于"
-        url = "/about"
-        weight = 4
+[languages.zh.menu]
+[[languages.zh.menu.main]]
+identifier = "posts"
+name = "文章"
+url = "/"
+weight = 1
+[[languages.zh.menu.main]]
+identifier = "project"
+name = "项目"
+url = "/project"
+weight = 2
+[[languages.zh.menu.main]]
+identifier = "hobby"
+name = "爱好"
+url = "/hobby"
+weight = 3
+[[languages.zh.menu.main]]
+identifier = "about"
+name = "关于"
+url = "/about"
+weight = 4

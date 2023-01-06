@@ -7,4 +7,5 @@ require (
 	github.com/davidsneighbour/hugo-functions v1.1.2 // indirect
 	github.com/davidsneighbour/hugo-head v1.1.12 // indirect
 	github.com/davidsneighbour/hugo-robots v1.2.3 // indirect
+	github.com/panr/hugo-theme-terminal/v3 v3.1.2 // indirect
 )
