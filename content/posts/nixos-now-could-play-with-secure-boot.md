@@ -79,7 +79,7 @@ sbctl enroll-keys --microsoft
 sbctl enroll-keys --yes-this-might-brick-my-machine
 ```
 
-即可只注册自己生成的安全密钥。
+即可只注册自己生成的证书和安全密钥。
 
 ### 引入配置文件
 > 你不需要手动添加 bootspec 的实验标志。lanzaboote 会自动开启它。
