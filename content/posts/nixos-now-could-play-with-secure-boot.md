@@ -37,9 +37,11 @@ trace: warning: RFC-0125 is not merged yet, this is a feature preview of bootspe
 以下配置步骤假定你使用 flake。
 
 ### 开启 Setup Mode
-进入你的 BIOS 设置页面，将安全启动模式从 ```User Mode``` 改为 ```Setup Mode```。保存配置并重启到 NixOS。
+
+进入你的 BIOS 设置页面，将安全启动模式从 `User Mode` 改为 `Setup Mode`。保存配置并重启到 NixOS。
 
 ### 引入 lanzaboote
+
 首先，你需要在 inputs 中引入 `lanzaboote`：
 
 ```shell
@@ -60,15 +62,19 @@ lanzaboote.nixosModules.lanzaboote
 ```
 
 ### 生成安全密钥
+
 引入完成后，你还需要创建安全密钥。输入以下指令即可生成一套：
+
 ```shell
 sbctl create-keys
 ```
 
-安全密钥默认生成在 ```/etc/secureboot``` 里。
+安全密钥默认生成在 `/etc/secureboot` 里。
 
 ### 注册安全密钥
+
 输入以下指令，将刚生成的安全密钥注册到固件内：
+
 ```shell
 sbctl enroll-keys --microsoft
 ```
@@ -82,7 +88,9 @@ sbctl enroll-keys --yes-this-might-brick-my-machine
 即可只注册自己生成的证书和安全密钥。
 
 ### 引入配置文件
+
 > 你不需要手动添加 bootspec 的实验标志。lanzaboote 会自动开启它。
+
 ```shell
   boot.lanzaboote = {
     enable = true;
@@ -92,22 +100,27 @@ sbctl enroll-keys --yes-this-might-brick-my-machine
 ```
 
 ### 生成统一启动镜像
+
 重新构建 NixOS 系统。如果一切顺利，你将在 EFI/Linux 下找到签名好的系统镜像。下次启动时，选择它即可安全启动 NixOS。
 
-> 警告：请务必使用 ```sbctl verify``` 验证你的启动文件签名情况。以下几个文件必须拥有正确的签名，才能让 NixOS 安全启动：
+> 警告：请务必使用 `sbctl verify` 验证你的启动文件签名情况。以下几个文件必须拥有正确的签名，才能让 NixOS 安全启动：
+>
 > - EFI/Boot/BOOTX64.EFI
 > - EFI/Linux/nixos-generation-xx.efi
 > - EFI/systemd/systemd-bootx64.efi
 >
-> 在特定情况下，```lanzaboote``` 不会对上面的某些文件进行签名！**这会导致你的 NixOS 无法安全启动！** 这是一个[已知问题](https://github.com/nix-community/lanzaboote/issues/39)。你可以在重建 NixOS 系统前删除以上文件，来规避这一问题。
+> 在特定情况下，`lanzaboote` 不会对上面的某些文件进行签名！**这会导致你的 NixOS 无法安全启动！** 这是一个[已知问题](https://github.com/nix-community/lanzaboote/issues/39)。你可以在重建 NixOS 系统前删除以上文件，来规避这一问题。
 
 ## 使用 TPM2
-如果你在使用 ```LUKS``` 加密分区，或许会对如何使用 ```TPM``` 自动解锁某些分区感兴趣。
+
+如果你在使用 `LUKS` 加密分区，或许会对如何使用 `TPM` 自动解锁某些分区感兴趣。
 
 ### 使用 systemd 作为引导加载程序
-> 事实上，你也可以将 ```clevis``` 插入到 [preLVM](https://search.nixos.org/options?channel=unstable&show=boot.initrd.preLVMCommands&from=0&size=50&sort=relevance&type=packages&query=preLVM) 配置中，以实现 shell script 下自动解锁特定分区的效果。不过，出于性能考虑，本文采用基于 ```systemd``` 的方案
+
+> 事实上，你也可以将 `clevis` 插入到 [preLVM](https://search.nixos.org/options?channel=unstable&show=boot.initrd.preLVMCommands&from=0&size=50&sort=relevance&type=packages&query=preLVM) 配置中，以实现 shell script 下自动解锁特定分区的效果。不过，出于性能考虑，本文采用基于 `systemd` 的方案
 
 你需要将以下配置添加到配置文件中：
+
 ```shell
 boot.initrd.systemd.enable = true;
 ```
@@ -115,7 +128,9 @@ boot.initrd.systemd.enable = true;
 以启动基于 systemd 的引导程序。
 
 ### 引入内核模块
+
 添加类似于下面的配置：
+
 ```shell
 boot.initrd.kernelModules = [ "tpm" "tpm_tis" "tpm_crb"]
 ```
@@ -123,14 +138,16 @@ boot.initrd.kernelModules = [ "tpm" "tpm_tis" "tpm_crb"]
 请依据自己的实际情况，按需引入 TPM 内核模块。
 
 ### 向 TPM 注册密钥
+
 > 以下内容主要来自于 [ArchLinux Wiki](https://wiki.archlinux.org/title/TPM)
 
 在终端里执行以下命令：
+
 ```
 systemd-cryptenroll --tpm2-device=auto --tpm2-pcrs=0+7 --tpm2-with-pin=true /dev/sdX
 ```
 
-其中，```--tpm2-with-pin``` 要求在 TPM 自动解锁前输入一串密码，而不是直接解锁。这可以有限的提升安全性。如果你不需要，请移除它。
+其中，`--tpm2-with-pin` 要求在 TPM 自动解锁前输入一串密码，而不是直接解锁。这可以有限的提升安全性。如果你不需要，请移除它。
 
 > 注意：该密码虽然叫做 PIN，但其实可以包含字母等不属于数字的内容
 
