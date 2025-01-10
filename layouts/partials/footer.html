@@ -1,0 +1,23 @@
+<footer class="footer">
+  <div class="footer__inner">
+    {{ if $.Site.Copyright }}
+      <div class="copyright copyright--user">
+        <span>{{ $.Site.Copyright | safeHTML }}</span>
+    {{ else }}
+      <div class="copyright">
+        <span>pokon548 © {{ now.Year }} | 由 <a href="https://gohugo.io">Hugo</a> 强力驱动</span>
+    {{ end }}
+      <span>:: 使用了 <a href="https://github.com/panr" target="_blank">panr</a> 制作的 <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">hugo-theme-terminal</a> 主题</span>
+      </div>
+  </div>
+</footer>
+
+{{ $menu := resources.Get "js/menu.js" | js.Build }}
+{{ $prism := resources.Get "js/prism.js" | js.Build }}
+
+{{ $bundle := slice $menu $prism | resources.Concat "bundle.js" | resources.Minify }}
+
+<script type="text/javascript" src="{{ $bundle.RelPermalink }}"></script>
+
+<!-- Extended footer section-->
+{{ partial "extended_footer.html" . }}
