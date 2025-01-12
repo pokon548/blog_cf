@@ -15,6 +15,10 @@
     --background: #1f1f1f;
     --foreground: #eceae5;
   }
+
+  .container {
+    border-right: 0
+  }
 }
 
 html {
