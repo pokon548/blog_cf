@@ -17,7 +17,7 @@
   <div id="waline" style="padding-top: 2rem"></div>
   <script>
     const locale = {
-      placeholder: "加入讨论...（如果你在评论时留下邮箱，就能收到回复提醒！）",
+      placeholder: "加入讨论...（如果你在评论时留下邮箱，就能收到回复提醒！）\n请留意：评论区使用 Cloudflare Turnstile",
       login: "使用 GitHub 等登录",
     };
 
@@ -28,6 +28,7 @@
       search: false,
       imageUploader: false,
       dark: "auto",
+      turnstileKey: "0x4AAAAAAA5KqSZJAYPBuGsr",
 
       emoji: ["https://cdn.jsdelivr.net/npm/@waline/emojis@1.3.0/tw-emoji"],
       locale,
