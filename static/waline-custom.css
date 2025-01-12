@@ -1,3 +1,11 @@
 :root {
-  --waline-theme-color: #62A0EA;
-  --waline-active-color: #62A0EA;
+  --waline-theme-color: #62A0EA !important;
+  --waline-active-color: #62A0EA !important;
+  --waline-bg-color: #ffffff !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --waline-bg-color: #1f1f1f !important;
+  }
+}

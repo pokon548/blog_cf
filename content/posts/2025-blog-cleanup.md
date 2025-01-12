@@ -26,7 +26,7 @@ hideComments = false
 - 将 Hugo 升级到 `v0.140`；
 - 升级 [hugo-theme-terminal](https://github.com/panr/hugo-theme-terminal) 到 `v4` 分支；
 - 将博客背景更改为亮色；
-    - 不过由于主题限制，我暂时还没有找到适配暗色主题的方法，因此如果你希望恢复到以前那样的暗色主题，可以在你的浏览器安装 [DarkReader](https://darkreader.org/) 暂时顶一下 :)。
+    - ~~不过由于主题限制，我暂时还没有找到适配暗色主题的方法，因此如果你希望恢复到以前那样的暗色主题，可以在你的浏览器安装 [DarkReader](https://darkreader.org/) 暂时顶一下 :)~~ 已经在新版适配了。现在博客会根据 `prefers-color-scheme` 自动选择亮色或是暗色模式 :)。
 - 升级 [Waline](https://waline.js.org/) 到 `v3.4.3`；
 - 修改了 `footer.html`，让底部看起来更舒服。
 

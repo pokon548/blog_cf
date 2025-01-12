@@ -10,6 +10,13 @@
   --line-height: 1.54em;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1f1f1f;
+    --foreground: #eceae5;
+  }
+}
+
 html {
   box-sizing: border-box;
 }
