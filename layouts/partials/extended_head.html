@@ -23,20 +23,23 @@
 <meta name="theme-color" content="#ffffff" />
 
 <!-- RSS for posts -->
-{{ with .OutputFormats.Get "rss" -}}
-  {{ printf `<link rel=%q type=%q href='/posts/index.xml' title=%q>` .Rel .MediaType.Type site.Title | safeHTML }}
-{{ end }}
+{{ with .OutputFormats.Get "rss" -}} {{ printf `<link
+  rel="%q"
+  type="%q"
+  href="/posts/index.xml"
+  title="%q"
+/>` .Rel .MediaType.Type site.Title | safeHTML }} {{ end }}
 
 <script
-  src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.31/dist/fancybox.umd.js"
-  integrity="sha256-0af2VbC4vmPsa8OLBAKBmLoyuKq4bBlKK2KOgMWayio="
+  src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.js"
+  integrity="sha256-hiUEBwFEpLF6DlB8sGXlKo4kPZ46Ui4qGpd0vrVkOm4="
   crossorigin="anonymous"
 ></script>
 
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.31/dist/fancybox.css"
-  integrity="sha256-7gMVmh7i2Xmo99mvvfnSn9dZfunTii7j4yPdmTAMUR0="
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.css"
+  integrity="sha256-zM8WXtG4eUn7dKKNMTuoWZub++VnSfaOpA/8PJfvTBo="
   crossorigin="anonymous"
 />
 
