@@ -106,13 +106,13 @@ keepWhitespace = false
 
 [languages]
 [languages.zh]
-[languages.zh.params]
 languageName = "中文"
-title = "pokon548 的部落阁"
+title = "pokon548 的部落阁！"
+[languages.zh.params]
 subtitle = "简单，随和的赛博自留地。包含技术、信息技术、娱乐、生活等内容。"
 owner = "pokon548"
 keywords = "技术 娱乐 生活 信息技术"
-copyright = "Copyright © 2016-2023 | pokon548"
+copyright = "Copyright © 2016-2025 | pokon548"
 menuMore = "更多"
 readMore = "继续阅读"
 readOtherPosts = "阅读其他文章"
