@@ -146,3 +146,8 @@ identifier = "about"
 name = "关于"
 url = "/about"
 weight = 4
+[[languages.zh.menu.main]]
+identifier = "rss-for-posts"
+name = "RSS"
+url = "/posts/index.xml"
+weight = 5

@@ -22,6 +22,11 @@
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
 <meta name="theme-color" content="#ffffff" />
 
+<!-- RSS for posts -->
+{{ with .OutputFormats.Get "rss" -}}
+  {{ printf `<link rel=%q type=%q href='/posts/index.xml' title=%q>` .Rel .MediaType.Type site.Title | safeHTML }}
+{{ end }}
+
 <script
   src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0.31/dist/fancybox.umd.js"
   integrity="sha256-0af2VbC4vmPsa8OLBAKBmLoyuKq4bBlKK2KOgMWayio="
