@@ -2,7 +2,7 @@
 title = "2025 新年快乐！"
 date = "2025-01-10T11:22:30+08:00"
 #dateFormat = "2006-01-02" # This value can be configured for per-post date formatting
-cover = ""
+cover = "https://s2.loli.net/2025/01/13/7rhRcfyWZbou5qK.webp"
 tags = ["blog"]
 keywords = ["blog"]
 description = "迟到的新年祝福，博客翻新，以及对过去一年的整理与记录..."
